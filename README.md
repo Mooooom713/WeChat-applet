@@ -1,1 +1,1 @@
-# WeChat-applet-backend
+# WeChat-applet
