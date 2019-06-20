@@ -1,0 +1,69 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.4",
+	"appid": "wx0250b3c075cb400b",
+	"projectname": "homo",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "studying",
+					"pathName": "pages/index/studying/myStudying/myStudying",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "故事接龙",
+					"pathName": "pages/index/storyMaking/storyMaking",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "故事页",
+					"pathName": "pages/index/storyMaking/storyReading/storyReading",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

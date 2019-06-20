@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "故事接龙",
+  "enablePullDownRefresh": false,
+  "backgroundColor": "#fff"
+}

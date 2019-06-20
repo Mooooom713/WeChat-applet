@@ -1,0 +1,20 @@
+<view class="choiceContainer">
+<navigator url='/pages/index/studying/creatNewStudying/creatNewStudying'>
+  <view class="btn" >发布新自习</view>
+</navigator>
+<navigator url='/pages/index/studying/myStudying/myStudying'>
+  <view class="btn" >我的</view>
+</navigator>
+</view>
+<view bindtap='intoAStudying' class='onePart'>
+  <view class='pic'>
+    <view >
+      <image src='/pages/picture/testFunction.jpg' class='Picture' > </image>
+      </view>
+    <view class='aTask'>
+      <text class='Text'>地点：</text>
+      <text class='Text'>时间：</text>
+      <text class='Text'>发起人：</text>
+    </view>
+  </view>
+</view>

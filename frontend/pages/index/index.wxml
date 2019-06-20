@@ -1,0 +1,29 @@
+<swiper class="slides">
+  <swiper-item>
+    <image src="../picture/testMessage1.jpg"
+    mode='aspectFill'/> 
+  </swiper-item>
+  <swiper-item>
+    <image src="../picture/testMessage2.jpg"
+    mode='aspectFill'/> 
+  </swiper-item>
+</swiper>
+
+<view class="homeFun">
+  <navigator class="NMSL" wx:key="id" url="/pages/index/studying/studying?type=1">
+    <image src="/pages/picture/testFunction1.jpg"/>
+    <text>约自习</text>
+  </navigator>
+  <navigator class="NMSL" wx:key="id" url="/pages/index/getUp/getUp?type=2">
+    <image src="/pages/picture/testFunction2.jpg"/>
+    <text>约早起</text>
+  </navigator>
+  <navigator class="NMSL" wx:key="id" url="/pages/index/photograph/photograph?type=3">
+    <image src="/pages/picture/testFunction3.jpg"/>
+    <text>爱摄影</text>
+  </navigator>
+  <navigator class="NMSL" wx:key="id" url="/pages/index/storyMaking/storyMaking?type=4&ceng=1">
+    <image src="/pages/picture/testFunction4.jpg"/>
+    <text>故事接龙</text>
+  </navigator>
+</view>

@@ -1,0 +1,33 @@
+.row{
+  line-height: 100rpx;
+  border: 2rpx solid #ccc;  
+  color: #444;
+  background-color: white;
+  display: flex;
+}
+.info {
+  height: 100rpx;
+}
+.title {
+  padding-left: 10rpx;
+  width: 100rpx;
+  float: left;
+}
+.text {
+  padding-left: 50rpx;
+  width: 200rpx;
+}
+.btn {
+  margin: 20rpx 30rpx 0 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  background-color: #ff9700;
+  color: white;
+  height: 100rpx;
+}
+page{
+  height: 100%;
+  background-color: white;
+}

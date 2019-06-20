@@ -1,0 +1,8 @@
+/* pages/model2/model2.wxss */
+.swiptext{
+  background-color:#ccc;
+  height: 1000rpx;
+}
+.asd {
+  word-wrap: break-word;
+}

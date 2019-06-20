@@ -1,0 +1,24 @@
+
+<view >
+  <view class='row'>
+    <text class='text'> 开始日期 </text>
+    <input class='info' placeholder='01月01日' bindinput='Inform_Input' data-prop='dayStart'></input>
+  </view>
+  <view class='row'>
+    <text class='text'> 任务长度 </text>
+    <input class='info' placeholder='X天' bindinput='Inform_Input' data-prop='timeSpan'></input>
+  </view>
+  <view class='row'>
+    <text class='text'> 起床时间 </text>
+    <input class='info' placeholder='8：00' bindinput='Inform_Input' data-prop='getUpTime'></input>
+  </view>
+  <view class='row'>
+    <text class='text'> 备注 </text>
+    <input class='info' placeholder='有些事要提前说好~~' bindinput='Inform_Input' data-prop='messages'></input>
+  </view>
+  <view class='row'>
+    <text class='text'> 联系方式 </text>
+    <input class='info' placeholder='电话联系互相监督~' bindinput='Inform_Input' data-prop='phoneNumber'></input>
+  </view>
+</view>
+<view class='btn' bindtap='Info_In'>确认发布</view>

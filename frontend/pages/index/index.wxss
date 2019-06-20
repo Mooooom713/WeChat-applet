@@ -1,0 +1,41 @@
+.slides{
+  height :323rpx;
+}
+.slides image{
+  width: 750rpx;
+  height: 100%;
+}
+.homeFun{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  font-size: 28rpx;
+  
+}
+
+.homeFun .NMSL {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  width:375rpx;
+  height:375rpx;
+  background-color:#fff;
+  border-right: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
+  box-sizing: border-box;
+
+}
+
+.homeFun .NMSL image{
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.homeFun .NMSL text{
+  display: block;
+  color: #888;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}

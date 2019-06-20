@@ -1,0 +1,6 @@
+<swiper class='swiptext' indicator-dots='ture'>
+  <swiper-item wx:for='{{abc}}' wx:for-item='aaa'>
+    <text class='asd'>{{ aaa.textbody }}
+    </text>
+  </swiper-item>
+</swiper>

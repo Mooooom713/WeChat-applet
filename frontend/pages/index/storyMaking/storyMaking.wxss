@@ -1,0 +1,43 @@
+.choiceContainer{
+  display: flex;
+  height: 80rpx;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  font-size: 28rpx;
+}
+.btn{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  width:375rpx;
+  height:80rpx;
+  background-color:#fff;
+  border-right: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+.aTask {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40rpx;
+  height: 225rpx;
+  padding-top: 35rpx;
+}
+.Text {
+  height: 60rpx;
+  color: #888;
+}
+.onePart{
+  background-color: white;
+  border-bottom: solid 2rpx #ccc;
+}
+.pic {
+  display: flex;
+}
+.Picture {
+  width: 225rpx;
+  height: 225rpx;
+}
