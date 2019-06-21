@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../database');
 
-router.post('/', function (req, res) {
+router.post('/', (req, res) => {
     const idLength = req.body.user_id ? req.body.user_id.length : 0;
     const passLength = req.body.user_password ? req.body.user_password.length : 0;
     const reg = /^\d{13}$/;
@@ -10,9 +10,9 @@ router.post('/', function (req, res) {
         res.status(400);
         res.send('invalid data');
     } else {
-        var addSql = 'INSERT INTO user(user_id, user_password) VALUES (?, ?)';
-        var addSqlParams = [req.body.user_id, req.body.user_password];
-        connection.query(addSql, addSqlParams, function (error, result) {
+        const addSql = 'INSERT INTO user(user_id, user_password) VALUES (?, ?)';
+        const addSqlParams = [req.body.user_id, req.body.user_password];
+        connection.query(addSql, addSqlParams, function (error) {
             if (error && error.code === 'ER_DUP_ENTRY') {
                 res.status(400);
                 res.send('user exists');
