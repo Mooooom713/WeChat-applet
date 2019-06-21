@@ -17,9 +17,9 @@ router.post('/', (req, res) => {
                 res.send();
             } else if (result.length === 0) {
                 res.status(404);
-                res.send('user not exist');
+                res.send('user name or password wrong');
             } else {
-                res.end();
+                res.end(result[0].role);
             }
         })
     }
