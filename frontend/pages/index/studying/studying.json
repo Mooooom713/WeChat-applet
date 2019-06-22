@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "displaycard" : "/component/DisplayCard/DisplayCard"
+  },
   "navigationBarTitleText": "约自习",
   "enablePullDownRefresh": true
 }

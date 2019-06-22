@@ -6,6 +6,17 @@ Page({
    */
   data: {
       id: 2 ,
+      array: [
+        {
+          title: 'ni'
+        },
+        {
+          title: 'ni'
+        },
+        {
+          title: 'ni'
+        }
+      ]
   },
 
   test: function(){
@@ -69,5 +80,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  _submitJoinEvent () {
+    console.log('welcome')
   }
 })

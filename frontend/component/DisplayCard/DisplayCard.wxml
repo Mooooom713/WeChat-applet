@@ -1,0 +1,13 @@
+<view class='onePart'>
+  <view class='pic'>
+    <view >
+      <image src='/pages/picture/testFunction.jpg' class='Picture' > </image>
+    </view>
+    <view class='aTask'>
+      <text class='Text'>地点：{{place}}</text>
+      <text class='Text'>时间：{{time}}</text>
+      <text class='Text'>发起人：{{createBy}}</text>
+      <button hidden='{{isHidden}}' class='joinBtn' catchtap='_handleClickJoin'>参加</button>
+    </view>
+  </view>
+</view>

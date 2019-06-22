@@ -1,0 +1,40 @@
+/** change by Joie begin**/
+
+
+.aTask {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 0;
+  height: 230rpx;
+  width: 100%;
+}
+/** change by Joie end**/
+.Text {
+  height: 60rpx;
+  color: #888;
+}
+.onePart{
+  background-color: white;
+  border-bottom: solid 2rpx #ccc;
+}
+.pic {
+  display: flex;
+}
+.Picture {
+  width: 225rpx;
+  height: 225rpx;
+}
+
+/** create by Joie begin**/
+.joinBtn{
+  align-self: flex-end;
+  justify-self: flex-end;
+  font-size: .8rem;
+  width: 80px;
+  height:22px;
+  line-height: 22px;
+  color: #888;
+  margin-top: 10px;
+  margin-right: 10px;
+}
