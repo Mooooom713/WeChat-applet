@@ -1,32 +1,9 @@
 <view class="choiceContainer">
-<navigator url='/pages/index/storyMaking/newStory/newStory'>
-  <view class="btn" >我来开头</view>
-</navigator>
-<navigator url='/pages/index/storyMaking/myStory/myStory'>
-  <view class="btn" >我的</view>
-</navigator>
+  <navigator url='/pages/index/storyMaking/newStory/newStory'>
+    <view class="btn">我来开头</view>
+  </navigator>
+  <navigator url='/pages/index/storyMaking/myStory/myStory'>
+    <view class="btn">我的</view>
+  </navigator>
 </view>
-<navigator bindtap='intoAStudying' class='onePart' url="/pages/index/storyMaking/storyReading/storyReading?ceng={{ ceng }}">
-  <view class='pic'>
-    <view >
-      <image src='/pages/picture/testFunction.jpg' class='Picture' > </image>
-      </view>
-    <view class='aTask'>
-      <text class='Text'>故事名称：《a wsl》</text>
-      <text class='Text'>总计字数：</text>
-    </view>
-  </view>
-</navigator>
-<!-- 
-<view bindtap='intoAStudying' class='onePart' wx:for="{{ //网页数据 }}" wx:key="id">
-  <view class='pic'>
-    <view >
-      <image src='/pages/picture/testFunction.jpg' class='Picture' > </image>
-      </view>
-    <view class='aTask'>
-      <text class='Text'>故事名称：{{ item.storyname }}</text>
-      <text class='Text'>总计字数：{{ item.length }} </text>
-    </view>
-  </view>
-</view>
- -->
+<storycard bind:navToDetail='_navToDetail'></storycard>

@@ -1,0 +1,11 @@
+<navigator catchtap='_navToDetail' class='onePart' url="/pages/index/storyMaking/storyReading/storyReading?ceng={{ ceng }}">
+    <view class='pic'>
+        <view>
+            <image src='/pages/picture/testFunction.jpg' class='Picture'></image>
+        </view>
+        <view class='aTask'>
+            <text class='Text'>故事名称：{{ storyName }}</text>
+            <text class='Text'>总计字数：{{ storyNumbers }}</text>
+        </view>
+    </view>
+</navigator>
