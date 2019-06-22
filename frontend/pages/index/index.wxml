@@ -3,10 +3,6 @@
     <image src="../picture/testMessage1.jpg"
     mode='aspectFill'/> 
   </swiper-item>
-  <swiper-item>
-    <image src="../picture/testMessage2.jpg"
-    mode='aspectFill'/> 
-  </swiper-item>
 </swiper>
 
 <view class="homeFun">
