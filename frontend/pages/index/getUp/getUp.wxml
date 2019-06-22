@@ -6,15 +6,8 @@
   <view class="btn" >我的</view>
 </navigator>
 </view>
-<view bindtap='intoAStudying' class='onePart'>
-  <view class='pic'>
-    <view >
-      <image src='/pages/picture/testFunction.jpg' class='Picture' > </image>
-      </view>
-    <view class='aTask'>
-      <text class='Text'>开始时间：</text>
-      <text class='Text'>持续时间：</text>
-      <text class='Text'>发起人：</text>
-    </view>
-  </view>
-</view>
+<displaycard
+  wx:for='{{array}}'
+  wx:key='index'
+  bind:submitJoinEvent='_submitJoinEvent'>
+</displaycard>

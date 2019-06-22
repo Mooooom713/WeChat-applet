@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    array: [
+      {
+        title: 'ni'
+      },
+      {
+        title: 'ni'
+      },
+      {
+        title: 'ni'
+      }
+    ]
   },
 
   /**
@@ -62,5 +72,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  
+  _submitJoinEvent () {
+    console.log('welcome')
   }
 })
