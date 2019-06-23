@@ -6,15 +6,15 @@
   </view>
   <view class='row'>
     <text class='text'> 日期 </text>
-    <input class='info' placeholder='01月01日' bindinput='Inform_Input' data-prop='dayIn'></input>
+    <input class='info' placeholder='2019-01-01' bindinput='Inform_Input' data-prop='dayIn'></input>
   </view>
   <view class='row'>
     <text class='text'> 开始时间 </text>
-    <input class='info' placeholder='00：00' bindinput='Inform_Input' data-prop='beginIn'></input>
+    <input class='info' placeholder='00:00:00' bindinput='Inform_Input' data-prop='beginIn'></input>
   </view>
   <view class='row'>
     <text class='text'> 结束时间 </text>
-    <input class='info' placeholder='23：59' bindinput='Inform_Input' data-prop='endIn'></input>
+    <input class='info' placeholder='23:59:00' bindinput='Inform_Input' data-prop='endIn'></input>
   </view>
   <view class='row'>
     <text class='text'> 备注 </text>

@@ -11,7 +11,7 @@
  Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 22/06/2019 00:57:15
+ Date: 23/06/2019 13:47:54
 */
 
 SET NAMES utf8mb4;
@@ -23,7 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment`  (
   `uuid` char(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `commenter_id` char(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `commenter_id` char(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `story_id` char(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `commenter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -31,9 +31,9 @@ CREATE TABLE `comment`  (
   INDEX `commenter_id`(`commenter_id`) USING BTREE,
   INDEX `story_id`(`story_id`) USING BTREE,
   INDEX `commenter_name`(`commenter_name`) USING BTREE,
-  CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`commenter_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`story_id`) REFERENCES `story` (`uuid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`commenter_name`) REFERENCES `user` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`commenter_name`) REFERENCES `user` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `comment_ibfk_4` FOREIGN KEY (`commenter_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -85,11 +85,11 @@ DROP TABLE IF EXISTS `photography`;
 CREATE TABLE `photography`  (
   `uuid` char(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `description` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `like_number` int(255) NOT NULL DEFAULT 0,
   `report` enum('true','false') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 0,
   `publisher` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `publisher_id` char(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `publisher_id` char(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`uuid`) USING BTREE,
   INDEX `publisher`(`publisher`) USING BTREE,
   INDEX `publisher_id`(`publisher_id`) USING BTREE,
@@ -132,7 +132,7 @@ CREATE TABLE `story`  (
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `publisher` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `publisher_id` char(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `publisher_id` char(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`uuid`) USING BTREE,
   INDEX `publisher`(`publisher`) USING BTREE,
   INDEX `publisher_id`(`publisher_id`) USING BTREE,

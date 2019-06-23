@@ -2,15 +2,15 @@
 <view >
   <view class='row'>
     <text class='text'> 开始日期 </text>
-    <input class='info' placeholder='01月01日' bindinput='Inform_Input' data-prop='dayStart'></input>
+    <input class='info' placeholder='2019-01-01' bindinput='Inform_Input' data-prop='dayStart'></input>
   </view>
   <view class='row'>
     <text class='text'> 任务长度 </text>
-    <input class='info' placeholder='X天' bindinput='Inform_Input' data-prop='timeSpan'></input>
+    <input class='info' placeholder='请输入天数' bindinput='Inform_Input' data-prop='timeSpan'></input>
   </view>
   <view class='row'>
     <text class='text'> 起床时间 </text>
-    <input class='info' placeholder='8：00' bindinput='Inform_Input' data-prop='getUpTime'></input>
+    <input class='info' placeholder='8:00:00' bindinput='Inform_Input' data-prop='getUpTime'></input>
   </view>
   <view class='row'>
     <text class='text'> 备注 </text>

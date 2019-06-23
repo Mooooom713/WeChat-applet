@@ -1,13 +1,9 @@
 <view class="choiceContainer">
-<navigator url='/pages/index/studying/creatNewStudying/creatNewStudying'>
-  <view class="btn" >发布新自习</view>
-</navigator>
-<navigator url='/pages/index/studying/myStudying/myStudying'>
-  <view class="btn" >我的</view>
-</navigator>
+  <navigator url='/pages/index/studying/creatNewStudying/creatNewStudying'>
+    <view class="btn">发布新自习</view>
+  </navigator>
+  <navigator url='/pages/index/studying/myStudying/myStudying'>
+    <view class="btn">我的</view>
+  </navigator>
 </view>
-<displaycard
-  wx:for='{{array}}'
-  wx:key='index'
-  bind:submitJoinEvent='_submitJoinEvent'>
-</displaycard>
+<displaycard wx:for='{{array}}' wx:key='index' bind:submitJoinEvent='_submitJoinEvent' placeholder='{{item.placeholder}}' place='{{item.place}}' time='{{item.time}}' createBy='{{item.createBy}}'></displaycard>
