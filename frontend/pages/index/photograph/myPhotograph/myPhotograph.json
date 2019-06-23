@@ -2,5 +2,6 @@
     "usingComponents": {
         "photographcard": "/component/PhotographCard/PhotographCard"
     },
-    "navigationBarTitleText": "爱摄影"
+    "navigationBarTitleText": "我的摄影",
+    "enablePullDownRefresh": false
 }

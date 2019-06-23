@@ -1,46 +1,47 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/profile/profile",
-    "pages/index/getUp/getUp",
-    "pages/index/photograph/photograph",
-    "pages/index/studying/studying",
-    "pages/index/studying/creatNewStudying/creatNewStudying",
-    "pages/index/storyMaking/storyMaking",
-    "pages/index/studying/myStudying/myStudying",
-    "pages/index/getUp/morningTask/morningTask",
-    "pages/index/storyMaking/newStory/newStory",
-    "pages/index/storyMaking/storyReading/storyReading",
-    "pages/index/getUp/myMorningTask/myMorningtask",
-    "pages/index/storyMaking/myStory/myStory"
-  ],
-  "window": {
-    "navigationBarBackgroundColor": "3a4861",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "HOMO",
-    "backgroundColor": "#bcc0c9",
-    "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
-  },
-  "tabBar": {
-    "color": "#999",
-    "selectedColor": "#444",
-    "backgroundColor": "#fff",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "pages/picture/test.jpg",
-        "selectedIconPath": "pages/picture/testActive.jpg"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的",
-        "iconPath": "pages/picture/test.jpg",
-        "selectedIconPath": "pages/picture/testActive.jpg"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/profile/profile",
+        "pages/index/getUp/getUp",
+        "pages/index/photograph/photograph",
+        "pages/index/studying/studying",
+        "pages/index/studying/creatNewStudying/creatNewStudying",
+        "pages/index/storyMaking/storyMaking",
+        "pages/index/studying/myStudying/myStudying",
+        "pages/index/getUp/morningTask/morningTask",
+        "pages/index/storyMaking/newStory/newStory",
+        "pages/index/storyMaking/storyReading/storyReading",
+        "pages/index/getUp/myMorningTask/myMorningtask",
+        "pages/index/storyMaking/myStory/myStory",
+        "pages/index/photograph/newPhotograph/newPhotograph",
+        "pages/index/photograph/myPhotograph/myPhotograph"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "3a4861",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "HOMO",
+        "backgroundColor": "#bcc0c9",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#444",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "pages/picture/test.jpg",
+                "selectedIconPath": "pages/picture/testActive.jpg"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "我的",
+                "iconPath": "pages/picture/test.jpg",
+                "selectedIconPath": "pages/picture/testActive.jpg"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

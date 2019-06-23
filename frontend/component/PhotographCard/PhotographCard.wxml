@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="swiper-wrap">
+    <swiper indicator-dots="{{true}}" duration="{{500}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image class="swiper-image" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="content-wrap">
+    <view class="text-wrap">
+      <text class="text">{{user}} : {{content}}</text>
+    </view>
+    <view class="button-wrap">
+      <button class="thumbs-up-btn {{activeClass}}" catchtap="_handleThumbsUp">点赞({{thumbsNumber}})</button>
+      <button class="report-btn" catchtap="_handleReport">举报</button>
+    </view>
+  </view>
+</view>

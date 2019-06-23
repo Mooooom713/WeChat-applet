@@ -1,2 +1,11 @@
-<!--pages/photograph.wxml-->
-<text>pages/photograph.wxml</text>
+<view class="choiceContainer">
+<navigator url='/pages/index/photograph/newPhotograph/newPhotograph'>
+  <view class="btn" >发布新任务</view>
+</navigator>
+<navigator url='/pages/index/photograph/myPhotograph/myPhotograph'>
+  <view class="btn" >我的</view>
+</navigator>
+</view>
+<photographcard></photographcard>
+<photographcard></photographcard>
+<photographcard></photographcard>
