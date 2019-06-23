@@ -5,17 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: [
-      {
-        title: 'ni'
-      },
-      {
-        title: 'ni'
-      },
-      {
-        title: 'ni'
-      }
-    ]
+    array: []
   },
 
   /**
@@ -29,7 +19,27 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.request({
+      url: 'https://wxhomo.xyz/getUp',
+      success: this.showAllDatas.bind(this)
+    })
+  },
 
+  /**
+   * 展示所有早起活动数据
+   */
+  showAllDatas: function (res) {
+    const array = this.data.array;
+    for (let i = 0; i < res.data.length; i++) {
+      array.push({
+        place: res.data[i].duration,
+        time: res.data[i].time,
+        createBy: res.data[i].initiator_name
+      })
+    }
+    this.setData({
+      array: array
+    })
   },
 
   /**
@@ -74,8 +84,10 @@ Page({
 
   },
 
-  
-  _submitJoinEvent () {
+  /**
+   * 点击参加
+   */
+  _submitJoinEvent() {
     console.log('welcome')
   }
 })

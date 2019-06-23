@@ -7,8 +7,11 @@
 </navigator>
 </view>
 <displaycard
-  wx:for='{{array}}'
-  wx:key='index'
-  place="{{item.title}}"
-  bind:submitJoinEvent='_submitJoinEvent'>
+  wx:for='{{array}}' 
+  wx:key='index' 
+  bind:submitJoinEvent='_submitJoinEvent' 
+  placeholder='任务长度' 
+  place='{{item.place}}' 
+  time='{{item.time}}' 
+  createBy='{{item.createBy}}'>
 </displaycard>

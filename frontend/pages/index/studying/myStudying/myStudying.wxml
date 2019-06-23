@@ -1,5 +1,11 @@
-<!--pages/index/studying/myStudying/myStudying.wxml-->
+<!-- pages/index/studying/myStudying/myStudying.wxml -->
 <view>
-    <displaycard
-      isHidden='true'></displaycard>
+  <displaycard 
+  wx:for='{{array}}' 
+  wx:key='index' 
+  placeholder='地点' 
+  place='{{item.place}}' 
+  time='{{item.time}}' 
+  createBy='{{item.createBy}}' 
+  isHidden='true'></displaycard>
 </view>

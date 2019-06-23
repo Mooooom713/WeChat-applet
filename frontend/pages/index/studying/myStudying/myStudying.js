@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    array: []
   },
 
   /**
@@ -19,7 +19,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.request({
+      url: 'https://wxhomo.xyz/selfStudy',
+      success: this.showMyDatas.bind(this)
+    })
+  },
 
+  /**
+   * 展示当前登录用户的自习活动数据
+   */
+  showMyDatas: function (res) {
+    // 获取当前登录用户的Id
+    const array = this.data.array;
+    for (let i = 0; i < res.data.length; i++) {
+      array.push({
+        place: res.data[i].address,
+        time: res.data[i].begin_time + '-' + res.data[i].end_time,
+        createBy: res.data[i].initiator_name
+      })
+    }
+    this.setData({
+      array: array
+    })
   },
 
   /**

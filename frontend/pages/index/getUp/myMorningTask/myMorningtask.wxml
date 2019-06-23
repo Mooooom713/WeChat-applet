@@ -1,5 +1,11 @@
-<!--pages/index/getUp/myMorningTask/myMorningtask.wxml-->
+<!-- pages/index/getUp/myMorningTask/myMorningtask.wxml -->
 <view>
-    <displaycard
-      isHidden='true'></displaycard>
+  <displaycard 
+    wx:for='{{array}}' 
+    wx:key='index' 
+    placeholder='任务长度' 
+    place='{{item.place}}' 
+    time='{{item.time}}' 
+    createBy='{{item.createBy}}' 
+    isHidden='true'></displaycard>
 </view>

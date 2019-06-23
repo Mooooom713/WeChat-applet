@@ -6,4 +6,11 @@
     <view class="btn">我的</view>
   </navigator>
 </view>
-<displaycard wx:for='{{array}}' wx:key='index' bind:submitJoinEvent='_submitJoinEvent' placeholder='{{item.placeholder}}' place='{{item.place}}' time='{{item.time}}' createBy='{{item.createBy}}'></displaycard>
+<displaycard 
+  wx:for='{{array}}' 
+  wx:key='index' 
+  bind:submitJoinEvent='_submitJoinEvent' 
+  placeholder='地点' 
+  place='{{item.place}}' 
+  time='{{item.time}}' 
+  createBy='{{item.createBy}}'></displaycard>

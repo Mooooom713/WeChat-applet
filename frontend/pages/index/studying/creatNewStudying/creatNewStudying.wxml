@@ -2,27 +2,27 @@
 <view >
   <view class='row'>
     <text class='text'> 地点 </text>
-    <input class='info' placeholder='输入详细地址'bindinput='Inform_Input' data-prop='studyPlace'></input>
+    <input class='info' placeholder='输入详细地址'></input>
   </view>
   <view class='row'>
     <text class='text'> 日期 </text>
-    <input class='info' placeholder='2019-01-01' bindinput='Inform_Input' data-prop='dayIn'></input>
+    <input class='info' placeholder='2019-01-01'></input>
   </view>
   <view class='row'>
     <text class='text'> 开始时间 </text>
-    <input class='info' placeholder='00:00:00' bindinput='Inform_Input' data-prop='beginIn'></input>
+    <input class='info' placeholder='00:00:00'></input>
   </view>
   <view class='row'>
     <text class='text'> 结束时间 </text>
-    <input class='info' placeholder='23:59:00' bindinput='Inform_Input' data-prop='endIn'></input>
+    <input class='info' placeholder='23:59:00'></input>
   </view>
   <view class='row'>
     <text class='text'> 备注 </text>
-    <input class='info' placeholder='有些事要提前说好~~' bindinput='Inform_Input' data-prop='messages'></input>
+    <input class='info' placeholder='有些事要提前说好~~'></input>
   </view>
   <view class='row'>
     <text class='text'> 联系方式 </text>
-    <input class='info' placeholder='电话联系互相监督~' bindinput='Inform_Input' data-prop='phoneNumber'></input>
+    <input class='info' placeholder='电话联系互相监督~'></input>
   </view>
 </view>
-<view class='btn' bindtap='Info_In'>确认发布</view>
+<view class='btn'>确认发布</view>

@@ -36,11 +36,9 @@ Page({
    * 展示所有自习活动数据
    */
   showAllDatas: function (res) {
-    console.log(res)
     const array = this.data.array;
     for (let i = 0; i < res.data.length; i++) {
       array.push({
-        placeholder: '地点',
         place: res.data[i].address,
         time: res.data[i].begin_time + '-' + res.data[i].end_time,
         createBy: res.data[i].initiator_name
@@ -93,6 +91,9 @@ Page({
 
   },
 
+  /**
+   * 点击参加
+   */
   _submitJoinEvent() {
     console.log('welcome')
   }

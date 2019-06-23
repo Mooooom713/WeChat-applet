@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    array: []
   },
 
   /**
@@ -19,7 +19,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.request({
+      url: 'https://wxhomo.xyz/getUp',
+      success: this.showAllDatas.bind(this)
+    })
+  },
 
+  /**
+   * 展示用户早起活动数据
+   */
+  showAllDatas: function (res) {
+    // 获取当前登录用户ID
+    const array = this.data.array;
+    for (let i = 0; i < res.data.length; i++) {
+      array.push({
+        place: res.data[i].duration,
+        time: res.data[i].time,
+        createBy: res.data[i].initiator_name
+      })
+    }
+    this.setData({
+      array: array
+    })
   },
 
   /**
