@@ -1,0 +1,22 @@
+<view class="text-content-wrap">
+    <view class="input-wrap">
+        <label for="title">标题:</label>
+        <input id="title" type="text" maxlength="20" />
+    </view>
+    <view class="desc-wrap">
+        <label for="desc">描述:</label>
+        <textarea id="desc" show-confirm-bar="{{ false }}"></textarea>
+    </view>
+</view>
+<view class="gallery">
+    <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+
+        <!-- 删除按钮 -->
+        <view class="delete" bindtap="delete" data-index="{{index}}">X</view>
+    </view>
+    <view class="item" bindtap="chooseImage">
+        <view class='addIcon'>+</view>
+    </view>
+</view>
+<button class="btn" bindtap="submit">提交</button>
