@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+    "usingComponents": {
+        "visitorprofile": "/component/VisitorProfile/VisitorProfile",
+        "userprofile": "/component/UserProfile/UserProfile"
+    }
 }

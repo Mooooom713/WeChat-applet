@@ -1,2 +1,2 @@
-<!--pages/profile/profile.wxml-->
-<text>profile</text>
+<!-- <visitorprofile></visitorprofile> -->
+<userprofile></userprofile>

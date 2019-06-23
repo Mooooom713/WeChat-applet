@@ -1,0 +1,28 @@
+<view class="container">
+  <text>欢迎您: </text>
+  <text class="text"> {{name}} </text>
+</view>
+<view class="mesg-wrap">
+  <label for="uId">ID:</label>
+  <input disabled id="uId" value="{{id}}"/>
+</view>
+<view class="mesg-wrap">
+  <label for="sex">性别:</label>
+  <input disabled id="sex" value="{{sex}}"/>
+</view>
+<view class="mesg-wrap">
+  <label for="age">年龄:</label>
+  <input disabled id="age" value="{{age}}"/>
+</view>
+<view class="mesg-wrap">
+  <label for="grade">年级:</label>
+  <input disabled id="grade" value="{{grade}}"/>
+</view>
+<view class="mesg-wrap">
+  <label for="college">学院:</label>
+  <input disabled id="college" value="{{college}}"/>
+</view>
+<view class="mesg-wrap">
+  <label for="major">专业:</label>
+  <input disabled id="major" value="{{major}}"/>
+</view>

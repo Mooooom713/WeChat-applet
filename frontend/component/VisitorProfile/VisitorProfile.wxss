@@ -1,0 +1,22 @@
+.up-wrap {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.login-wrap {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.login,
+.register {
+    flex: 0 0 40%;
+    background: #ff9700;
+    color: #ffffff;
+}
