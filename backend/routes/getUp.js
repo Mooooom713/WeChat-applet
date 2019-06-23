@@ -21,13 +21,13 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    if (!req.body.startDate || !req.body.duration || !req.body.time || !req.body.initiator) {
+    if (!req.body.startDate || !req.body.duration || !req.body.time || !req.body.initiator || !req.body.initiator_name) {
         res.status(500);
         res.send('incomplete data');
         return;
     }
-    const addSql = "INSERT INTO getup(uuid, startDate, duration, time, remark, telephone, initiator, participants_number) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    const addSqlParams = [uuid.v4(), req.body.startDate, req.body.duration, req.body.time, req.body.remark || null, req.body.telephone || null, req.body.initiator, 1];
+    const addSql = "INSERT INTO getup(uuid, startDate, duration, time, remark, telephone, initiator, participants_number, initiator_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const addSqlParams = [uuid.v4(), req.body.startDate, req.body.duration, req.body.time, req.body.remark || null, req.body.telephone || null, req.body.initiator, 1, req.body.initiator_name];
     connection.query(addSql, addSqlParams, function (error) {
         if (error) {
             res.status(400);

@@ -1,28 +1,40 @@
-
-<view >
-  <view class='row'>
-    <text class='text'> 地点 </text>
-    <input class='info' placeholder='输入详细地址'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 日期 </text>
-    <input class='info' placeholder='2019-01-01'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 开始时间 </text>
-    <input class='info' placeholder='00:00:00'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 结束时间 </text>
-    <input class='info' placeholder='23:59:00'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 备注 </text>
-    <input class='info' placeholder='有些事要提前说好~~'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 联系方式 </text>
-    <input class='info' placeholder='电话联系互相监督~'></input>
-  </view>
+<view>
+  <form bindsubmit='openDialog'>
+    <view class='row'>
+      <text class='text'>地点</text>
+      <input type='text' name='address' class='info' placeholder='输入详细地址'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>日期</text>
+      <input type='text' name='date' class='info' placeholder='2019-01-01'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>开始时间</text>
+      <input type='text' name='begin_time' class='info' placeholder='00:00:00'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>结束时间</text>
+      <input type='text' name='end_time' class='info' placeholder='23:59:59'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>备注</text>
+      <input type='text' name='remark' class='info' placeholder='有些事要提前说好~~'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>联系方式</text>
+      <input type='text' name='telephone' class='info' placeholder='电话联系互相监督~'></input>
+    </view>
+    <button class='btn' form-type='submit'>确认发布</button>
+  </form>
+  <dialog 
+    class="modal" 
+    title='提示' 
+    cancelText='取消' 
+    confirmText='确定' 
+    bind:cancelEvent='_cancelEvent' 
+    bind:confirmEvent='_confirmEvent'>
+    <view class="modal-body">
+      <view>确定要提交吗？</view>
+    </view>
+  </dialog>
 </view>
-<view class='btn'>确认发布</view>

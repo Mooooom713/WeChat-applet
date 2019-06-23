@@ -1,24 +1,36 @@
-
-<view >
-  <view class='row'>
-    <text class='text'> 开始日期 </text>
-    <input class='info' placeholder='2019-01-01' bindinput='Inform_Input' data-prop='dayStart'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 任务长度 </text>
-    <input class='info' placeholder='请输入天数' bindinput='Inform_Input' data-prop='timeSpan'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 起床时间 </text>
-    <input class='info' placeholder='8:00:00' bindinput='Inform_Input' data-prop='getUpTime'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 备注 </text>
-    <input class='info' placeholder='有些事要提前说好~~' bindinput='Inform_Input' data-prop='messages'></input>
-  </view>
-  <view class='row'>
-    <text class='text'> 联系方式 </text>
-    <input class='info' placeholder='电话联系互相监督~' bindinput='Inform_Input' data-prop='phoneNumber'></input>
-  </view>
+<view>
+  <form bindsubmit='openDialog'>
+    <view class='row'>
+      <text class='text'>开始日期</text>
+      <input type='text' name='startDate' class='info' placeholder='2019-01-01'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>任务长度</text>
+      <input type='text' name='duration' class='info' placeholder='请输入天数'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>起床时间</text>
+      <input type='text' name='time' class='info' placeholder='8:00:00'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>备注</text>
+      <input type='text' name='remark' class='info' placeholder='有些事要提前说好~~'></input>
+    </view>
+    <view class='row'>
+      <text class='text'>联系方式</text>
+      <input type='text' name='telephone' class='info' placeholder='电话联系互相监督~'></input>
+    </view>
+    <button class='btn' form-type='submit'>确认发布</button>
+  </form>
+  <dialog 
+    class="modal" 
+    title='提示' 
+    cancelText='取消' 
+    confirmText='确定' 
+    bind:cancelEvent='_cancelEvent' 
+    bind:confirmEvent='_confirmEvent'>
+    <view class="modal-body">
+      <view>确定要提交吗？</view>
+    </view>
+  </dialog>
 </view>
-<view class='btn' bindtap='Info_In'>确认发布</view>

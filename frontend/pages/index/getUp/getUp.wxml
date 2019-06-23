@@ -3,7 +3,7 @@
   <view class="btn" >发布新任务</view>
 </navigator>
 <navigator url='/pages/index/getUp/myMorningTask/myMorningtask'>
-  <view class="btn" >我的</view>
+  <view class="btn" >我发起的</view>
 </navigator>
 </view>
 <displaycard
@@ -13,5 +13,6 @@
   placeholder='任务长度' 
   place='{{item.place}}' 
   time='{{item.time}}' 
-  createBy='{{item.createBy}}'>
+  createBy='{{item.createBy}}' 
+  content='参加'>
 </displaycard>

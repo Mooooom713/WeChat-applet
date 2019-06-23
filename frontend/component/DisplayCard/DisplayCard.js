@@ -31,6 +31,11 @@ Component({
     isHidden: {
       type: Boolean,
       value: false
+    },
+    // 内容
+    content: {
+      type: String,
+      value: ''
     }
   },
 
@@ -47,7 +52,10 @@ Component({
    */
   methods: {
     _handleClickJoin() {
-      this.triggerEvent("submitJoinEvent")
+      // this.triggerEvent("submitJoinEvent")
+      this.setData({
+        content: '已参加'
+      })
     }
   }
 })

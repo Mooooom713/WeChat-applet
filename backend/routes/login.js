@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
                 res.status(404);
                 res.send('user name or password wrong');
             } else {
-                res.end(result[0].role);
+                res.end(JSON.stringify(result[0]));
             }
         })
     }

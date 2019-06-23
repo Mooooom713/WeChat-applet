@@ -26,17 +26,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.request({
-      url: 'https://wxhomo.xyz/selfStudy',
-      success: this.showAllDatas.bind(this)
-    })
+
   },
 
   /**
    * 展示所有自习活动数据
    */
   showAllDatas: function (res) {
-    const array = this.data.array;
+    let array = [];
     for (let i = 0; i < res.data.length; i++) {
       array.push({
         place: res.data[i].address,
@@ -53,7 +50,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.request({
+      url: 'https://wxhomo.xyz/selfStudy',
+      success: this.showAllDatas.bind(this)
+    })
   },
 
   /**
@@ -89,12 +89,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 点击参加
-   */
-  _submitJoinEvent() {
-    console.log('welcome')
   }
 })

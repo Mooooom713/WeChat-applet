@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "dialog": "/component/Dialog/Dialog"
+  },
   "navigationBarTitleText": "新任务",
   "enablePullDownRefresh": false
 }
