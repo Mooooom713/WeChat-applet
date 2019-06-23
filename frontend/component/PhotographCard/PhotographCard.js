@@ -23,6 +23,10 @@ Component({
         thumbsNumber: {
             type: Number,
             value: 0
+        },
+        isShow: {
+            type: Boolean,
+            value: true
         }
     },
 
@@ -44,7 +48,6 @@ Component({
                 activeClass: this.data.activeClass ? '' : 'active'
             }, () => {
                 this.triggerEvent("handleThumbsUp")
-                console.log('ok')
             })
         },
         _handleReport() {

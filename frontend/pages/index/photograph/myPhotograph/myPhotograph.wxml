@@ -1,1 +1,1 @@
-<photographcard></photographcard>
+<photographcard isShow="{{false}}"></photographcard>

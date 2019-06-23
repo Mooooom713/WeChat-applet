@@ -15,7 +15,8 @@
     height: 100%;
 }
 
-.text-wrap {
+.text-wrap,
+.number-wrap {
     margin: 0 10px;
 }
 
@@ -52,5 +53,10 @@
 }
 
 .active {
-    background-color: aquamarine;
+    color: #ff9700;
+}
+
+.number-wrap {
+    margin-top: 10px;
+    color: #ff9700;
 }

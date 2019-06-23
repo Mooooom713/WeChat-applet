@@ -9,5 +9,6 @@
 <displaycard
   wx:for='{{array}}'
   wx:key='index'
+  place="{{item.title}}"
   bind:submitJoinEvent='_submitJoinEvent'>
 </displaycard>
