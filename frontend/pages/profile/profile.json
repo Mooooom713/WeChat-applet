@@ -2,6 +2,7 @@
     "usingComponents": {
         "visitorprofile": "/component/VisitorProfile/VisitorProfile",
         "userprofile": "/component/UserProfile/UserProfile",
-        "logindialog": "/component/LoginDialog/LoginDialog"
+        "logindialog": "/component/LoginDialog/LoginDialog",
+        "registerdialog": "/component/RegisterDialog/RegisterDialog"
     }
 }

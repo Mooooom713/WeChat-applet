@@ -1,11 +1,25 @@
-<visitorprofile bind:showLoginDialog="_showLoginDialog"></visitorprofile>
-<!-- <userprofile></userprofile> -->
+<visitorprofile 
+  wx:if="{{!isLogin}}"
+  bind:showLoginDialog="_showLoginDialog"
+  bind:showRegisterDialog="_showRegisterDialog">
+</visitorprofile>
+<userprofile
+  wx:if="{{isLogin}}"
+  id="{{userInfo['user_id']}}"
+  sex="{{userInfo.gender}}"
+  age="{{userInfo.age}}"
+  grade="{{userInfo.grade}}"
+  college="{{userInfo.department}}"
+  major="{{userInfo.major}}"
+  name="{{userInfo.name}}">
+</userprofile>
+<!-- dialog -->
 <logindialog 
-  id='dialog' 
-  title='我是标题' 
-  content='恭喜你，学会了小程序组件' 
-  cancelText='知道了' 
-  confirm='谢谢你' 
-  bind:cancelEvent="_cancelEvent" 
-  bind:confirmEvent="_confirmEvent">
+  id='loginDialog' 
+  bind:confirmEvent="_confirmLoginEvent">
 </logindialog>
+
+<registerdialog
+  id='registerDialog' 
+  bind:confirmEvent="_confirmRegisterEvent">
+</registerdialog>

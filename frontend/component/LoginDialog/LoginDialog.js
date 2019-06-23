@@ -8,26 +8,6 @@ Component({
      * 用于组件自定义设置
      */
     properties: {
-        // 弹窗标题
-        title: { // 属性名
-            type: String, // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
-            value: '标题' // 属性初始值（可选），如果未指定则会根据类型选择一个
-        },
-        // 弹窗内容
-        content: {
-            type: String,
-            value: '弹窗内容'
-        },
-        // 弹窗取消按钮文字
-        cancelText: {
-            type: String,
-            value: '取消'
-        },
-        // 弹窗确认按钮文字
-        confirmText: {
-            type: String,
-            value: '确定'
-        }
     },
 
     /**
@@ -36,7 +16,9 @@ Component({
      */
     data: {
         // 弹窗显示控制
-        isShow: false
+        isShow: false,
+        uID: '',
+        sPW: ''
     },
 
     /**
@@ -60,16 +42,32 @@ Component({
                 isShow: !this.data.isShow
             })
         },
+        getLoginData() {
+            return this.data;
+        },
         /*
          * 内部私有方法建议以下划线开头
          * triggerEvent 用于触发事件
          */
+        _handleSaveID(e) {
+            console.log(e.detail)
+            this.setData({
+                uID : e.detail.value
+            })
+        },
+        _handleSavePW(e) {
+            this.setData({
+                sPW : e.detail.value
+            })
+        },
         _cancelEvent() {
-            //触发取消回调
-            this.triggerEvent("cancelEvent")
+            this.setData({
+                isShow: !this.data.isShow,
+                uID: '',
+                sPW: ''
+            })
         },
         _confirmEvent() {
-            //触发成功回调
             this.triggerEvent("confirmEvent");
         }
     }

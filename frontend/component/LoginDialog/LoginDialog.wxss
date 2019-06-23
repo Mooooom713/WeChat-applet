@@ -10,7 +10,7 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.wx-dialog {
+.login-dialog {
     position: fixed;
     z-index: 5000;
     width: 80%;
@@ -22,15 +22,15 @@
     background-color: #FFFFFF;
     text-align: center;
     border-radius: 3px;
-    overflow: hidden;
 }
 
-.wx-dialog-title {
+.login-dialog-title {
     font-size: 18px;
-    padding: 15px 15px 5px;
+    padding: 10px 15px 10px;
+    border-bottom: 1px solid #dddddd;
 }
 
-.wx-dialog-content {
+.login-dialog-content {
     padding: 15px 15px 5px;
     min-height: 40px;
     font-size: 16px;
@@ -40,7 +40,27 @@
     color: #999999;
 }
 
-.wx-dialog-footer {
+.value-wrap{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.value-wrap > label {
+    text-align: right;
+    flex: 0 0 20%;
+}
+
+.value-wrap > input {
+    flex: 0 0 60%;
+    background: #f7f4f4;
+    text-align: left;
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+.login-dialog-footer {
     display: flex;
     align-items: center;
     position: relative;
@@ -48,7 +68,7 @@
     font-size: 17px;
 }
 
-.wx-dialog-footer::before {
+.login-dialog-footer::before {
     content: '';
     position: absolute;
     left: 0;
@@ -63,7 +83,7 @@
     transform: scaleY(0.5);
 }
 
-.wx-dialog-btn {
+.login-dialog-btn {
     display: block;
     -webkit-flex: 1;
     flex: 1;
@@ -71,15 +91,15 @@
     position: relative;
 }
 
-.wx-dialog-footer .wx-dialog-btn:nth-of-type(1) {
+.login-dialog-footer .login-dialog-btn:nth-of-type(1) {
     color: #353535;
 }
 
-.wx-dialog-footer .wx-dialog-btn:nth-of-type(2) {
+.login-dialog-footer .login-dialog-btn:nth-of-type(2) {
     color: #3CC51F;
 }
 
-.wx-dialog-footer .wx-dialog-btn:nth-of-type(2):after {
+.login-dialog-footer .login-dialog-btn:nth-of-type(2):after {
     content: " ";
     position: absolute;
     left: 0;

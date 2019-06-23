@@ -1,0 +1,46 @@
+<view class='wx_dialog_container' hidden="{{!isShow}}">
+    <view class='wx-mask'></view>
+    <view class='login-dialog'>
+        <view class='login-dialog-title'>注册</view>
+        <view class='login-dialog-content'>
+          <form class="login-form">
+            <view class="value-wrap">
+              <label for="uId">ID:</label>
+              <input id="uId" bindblur="_handleSaveID" value="{{uID}}"/>
+            </view>
+            <view class="value-wrap">
+              <label for="password">密码:</label>
+              <input id="password" password="{{true}}" bindblur="_handleSavePW" value="{{sPW}}" />
+            </view>
+            <view class="value-wrap">
+              <label for="name">名字:</label>
+              <input id="name" bindblur="_handleSaveNM" value="{{sName}}" />
+            </view>
+            <view class="value-wrap">
+              <label for="sex">性别:</label>
+              <input id="sex" bindblur="_handleSaveSX" value="{{sSex}}" />
+            </view>
+            <view class="value-wrap">
+              <label for="age">年龄:</label>
+              <input id="age" bindblur="_handleSaveAG" value="{{sAge}}" />
+            </view>
+            <view class="value-wrap">
+              <label for="grade">年级:</label>
+              <input id="grade" bindblur="_handleSaveGD" value="{{sGrade}}" />
+            </view>
+            <view class="value-wrap">
+              <label for="college">学院:</label>
+              <input id="college" bindblur="_handleSaveCL" value="{{sCollege}}" />
+            </view>
+            <view class="value-wrap">
+              <label for="major">专业:</label>
+              <input id="major" bindblur="_handleSaveMJ" value="{{sMajor}}" />
+            </view>
+          </form>
+        </view>
+        <view class='login-dialog-footer'>
+          <view class='login-dialog-btn' catchtap='_cancelEvent'>取消</view>
+          <view class='login-dialog-btn' catchtap='_confirmEvent'>登录</view>
+        </view>
+    </view>
+</view>

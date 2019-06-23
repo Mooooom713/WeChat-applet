@@ -42,6 +42,9 @@ Component({
     methods: {
         _showLoginDialog() {
             this.triggerEvent("showLoginDialog")
+        },
+        _showRegisterDialog() {
+            this.triggerEvent("showRegisterDialog")
         }
     }
 })

@@ -3,5 +3,5 @@
 </view>
 <view class="login-wrap">
   <button class="login" catchtap="_showLoginDialog">登录</button>
-  <button class="register">注册</button>
+  <button class="register" catchtap="_showRegisterDialog">注册</button>
 </view>
