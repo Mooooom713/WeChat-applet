@@ -1,6 +1,5 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "故事接龙",
-  "enablePullDownRefresh": false,
-  "backgroundColor": "#fff"
+    "usingComponents": {},
+    "navigationBarTitleText": "发帖",
+    "enablePullDownRefresh": false
 }

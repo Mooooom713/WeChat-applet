@@ -1,8 +1,87 @@
-/* pages/model2/model2.wxss */
-.swiptext{
-  background-color:#ccc;
-  height: 1000rpx;
+.container {
+    width: 100%;
 }
-.asd {
-  word-wrap: break-word;
+
+.mainWrap {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.commentWrap {
+    overflow-y: scroll;
+}
+
+.h2,
+.comment {
+    margin-left: 5%;
+}
+
+.h2 {
+    font-size: 1.5rem;
+    color: green;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #dddddd;
+}
+
+.comentText {
+    margin-top: 10px;
+}
+
+.user {
+    align-self: flex-end;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    font-size: .8rem;
+}
+
+.mainStory {
+    flex: 0 0 90%;
+    height: 90%;
+    background: #ff9700;
+    color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.footerbarWrap {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    background: #dddddd;
+    z-index: 999;
+}
+
+.textarea {
+    flex: 10;
+    height: 56%;
+    background: #ffffff;
+    line-height: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    margin: 0 10px;
+    flex: 2;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

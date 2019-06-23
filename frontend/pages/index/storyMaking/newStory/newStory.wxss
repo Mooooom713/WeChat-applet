@@ -1,20 +1,21 @@
 .body {
-  height: 900rpx;
-  width: 750rpx;
-  background-color: white
-  
+    height: 900rpx;
+    width: 750rpx;
+    background-color: white;
 }
+
 .clear {
-  padding-bottom: 40rpx;
+    padding-bottom: 40rpx;
 }
+
 .btn {
-  margin: 20rpx 30rpx 0 30rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20rpx;
-  background-color: #ff9700;
-  color: white;
-  height: 100rpx;
-  width: 90%
+    margin: 20rpx 30rpx 0 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20rpx;
+    background-color: #ff9700;
+    color: white;
+    height: 100rpx;
+    width: 90%
 }

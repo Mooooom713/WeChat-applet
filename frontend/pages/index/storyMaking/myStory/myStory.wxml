@@ -1,2 +1,1 @@
-<!--pages/index/storyMaking/myStory/myStory.wxml-->
-<text>pages/index/storyMaking/myStory/myStory.wxml</text>
+<storycard bind:navToDetail='_navToDetail'></storycard>

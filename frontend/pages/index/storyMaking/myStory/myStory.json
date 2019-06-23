@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+    "usingComponents": {
+        "storycard": "/component/StoryCard/StoryCard"
+    },
+    "navigationBarTitleText": "我的故事接龙"
 }
