@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid #dddddd;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: #ff9700;
+    margin-left: 10px;
+}
+
+.mesg-wrap {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    border-bottom: 1px solid #dddddd;
+    background: #ffffff;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.mesg-wrap>label {
+    flex: 2;
+    text-align: center;
+}
+
+.mesg-wrap>input {
+    flex: 6;
+}
