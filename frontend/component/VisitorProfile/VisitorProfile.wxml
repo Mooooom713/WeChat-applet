@@ -2,6 +2,6 @@
   <text class="text">您目前是游客身份，快去登录或注册吧~</text>
 </view>
 <view class="login-wrap">
-  <button class="login">登录</button>
+  <button class="login" catchtap="_showLoginDialog">登录</button>
   <button class="register">注册</button>
 </view>

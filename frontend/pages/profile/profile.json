@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "visitorprofile": "/component/VisitorProfile/VisitorProfile",
-        "userprofile": "/component/UserProfile/UserProfile"
+        "userprofile": "/component/UserProfile/UserProfile",
+        "dialog": "/component/Dialog/Dialog"
     }
 }
