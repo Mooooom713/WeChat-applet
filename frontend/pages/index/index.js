@@ -61,5 +61,39 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  navigate: function (e) {
+    if (!wx.getStorageSync('loginInfo')) {
+      wx.showToast({
+        title: '请先登录才能访问这些功能哦！',
+        icon: "none"
+      })
+      return;
+    }
+    switch (e.currentTarget.dataset.module) {
+      case '1':
+        wx.navigateTo({
+          url: '/pages/index/studying/studying?type=1'
+        })
+        break;
+      case '2':
+        wx.navigateTo({
+          url: '/pages/index/getUp/getUp?type=2'
+        })
+        break;
+      case '3':
+        wx.navigateTo({
+          url: '/pages/index/photograph/photograph?type=3'
+        })
+        break;
+      case '4':
+        wx.navigateTo({
+          url: '/pages/index/storyMaking/storyMaking?type=4&ceng=1'
+        })
+        break;
+      default:
+        break;
+    }
   }
 })

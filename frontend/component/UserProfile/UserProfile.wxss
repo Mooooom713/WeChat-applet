@@ -31,3 +31,8 @@
 .mesg-wrap>input {
     flex: 6;
 }
+
+button.right {
+    position: fixed;
+    right: 0px;
+}

@@ -8,14 +8,14 @@ Component({
      */
     properties: {
         // id
-        id: { // 属性名
+        uid: { // 属性名
             type: String, // 类型（必填）
-            value: '123456789123' // 属性初始值（可选），如果未指定则会根据类型选择一个
+            value: '' // 属性初始值（可选），如果未指定则会根据类型选择一个
         },
         // 性别
         sex: {
             type: String,
-            value: '女'
+            value: ''
         },
         // 年龄
         age: {
@@ -25,21 +25,21 @@ Component({
         //年级
         grade: {
             type: String,
-            value: '大一'
+            value: ''
         },
         //学院
         college: {
             type: String,
-            value: '你猜'
+            value: ''
         },
         //专业
         major: {
             type: String,
-            value: '计算机'
+            value: ''
         },
         name: {
             type: String,
-            value: 'Joie'
+            value: ''
         }
     },
 
@@ -54,6 +54,8 @@ Component({
      * 更新属性和数据的方法与更新页面数据的方法类似
      */
     methods: {
-
+        _exit() {
+            this.triggerEvent("exit")
+        }
     }
 })

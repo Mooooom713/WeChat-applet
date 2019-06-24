@@ -5,13 +5,14 @@
 </visitorprofile>
 <userprofile
   wx:if="{{isLogin}}"
-  id="{{userInfo['user_id']}}"
+  uid="{{userInfo.user_id}}"
   sex="{{userInfo.gender}}"
   age="{{userInfo.age}}"
   grade="{{userInfo.grade}}"
   college="{{userInfo.department}}"
   major="{{userInfo.major}}"
-  name="{{userInfo.name}}">
+  name="{{userInfo.name}}"
+  bind:exit="exit">
 </userprofile>
 <!-- dialog -->
 <logindialog 
@@ -23,3 +24,15 @@
   id='registerDialog' 
   bind:confirmEvent="_confirmRegisterEvent">
 </registerdialog>
+
+<dialog 
+    class="modal" 
+    title='提示' 
+    cancelText='取消' 
+    confirmText='确定' 
+    bind:cancelEvent='_cancelEvent' 
+    bind:confirmEvent='_confirmEvent'>
+    <view class="modal-body">
+      <view>确定要退出吗？</view>
+    </view>
+  </dialog>

@@ -3,6 +3,7 @@
         "visitorprofile": "/component/VisitorProfile/VisitorProfile",
         "userprofile": "/component/UserProfile/UserProfile",
         "logindialog": "/component/LoginDialog/LoginDialog",
-        "registerdialog": "/component/RegisterDialog/RegisterDialog"
+        "registerdialog": "/component/RegisterDialog/RegisterDialog",
+        "dialog": "/component/Dialog/Dialog"
     }
 }

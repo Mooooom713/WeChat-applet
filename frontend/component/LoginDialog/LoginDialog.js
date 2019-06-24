@@ -50,14 +50,13 @@ Component({
          * triggerEvent 用于触发事件
          */
         _handleSaveID(e) {
-            console.log(e.detail)
             this.setData({
-                uID : e.detail.value
+                uID: e.detail.value
             })
         },
         _handleSavePW(e) {
             this.setData({
-                sPW : e.detail.value
+                sPW: e.detail.value
             })
         },
         _cancelEvent() {

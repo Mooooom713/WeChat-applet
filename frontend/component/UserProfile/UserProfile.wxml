@@ -1,10 +1,11 @@
 <view class="container">
   <text>欢迎您: </text>
   <text class="text"> {{name}} </text>
+  <button class="right" bindtap='_exit'>退出登录</button>
 </view>
 <view class="mesg-wrap">
   <label for="uId">ID:</label>
-  <input disabled id="uId" value="{{id}}"/>
+  <input disabled id="uId" value="{{uid}}"/>
 </view>
 <view class="mesg-wrap">
   <label for="sex">性别:</label>
