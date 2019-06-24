@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isShow: false
   },
 
   /**
@@ -25,7 +25,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (!wx.getStorageSync('loginInfo') || wx.getStorageSync('loginInfo').role === 'student') {
+      this.setData({
+        isShow: false
+      })
+    } else {
+      this.setData({
+        isShow: true
+      })
+    }
   },
 
   /**

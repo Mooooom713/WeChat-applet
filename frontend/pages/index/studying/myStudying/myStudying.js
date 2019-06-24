@@ -44,9 +44,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.request({
-      url: 'https://wxhomo.xyz/selfStudy',
-      success: this.showMyDatas.bind(this)
+    // wx.request({
+    //   url: 'https://wxhomo.xyz/selfStudy',
+    //   success: this.showMyDatas.bind(this)
+    // })
+    this.setData({
+      array: wx.getStorageSync('selfStudys').filter((item) => {
+        return item.createBy === wx.getStorageSync('loginInfo').name;
+      })
     })
   },
 

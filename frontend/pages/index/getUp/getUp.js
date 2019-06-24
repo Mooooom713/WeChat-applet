@@ -43,9 +43,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.request({
-      url: 'https://wxhomo.xyz/getUp',
-      success: this.showAllDatas.bind(this)
+    // wx.request({
+    //   url: 'https://wxhomo.xyz/getUp',
+    //   success: this.showAllDatas.bind(this)
+    // })
+    if (!wx.getStorageSync('getUps') || wx.getStorageSync('getUps').length === 0) {
+      wx.setStorageSync('getUps', [{
+        place: '14天',
+        time: '2019-01-01 8:00:00',
+        createBy: 'joie'
+      }, {
+        place: '20天',
+        time: '2019-01-01 6:00:00',
+        createBy: 'amy'
+      }])
+    }
+    this.setData({
+      array: wx.getStorageSync('getUps')
     })
   },
 

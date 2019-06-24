@@ -50,9 +50,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.request({
-      url: 'https://wxhomo.xyz/selfStudy',
-      success: this.showAllDatas.bind(this)
+    // wx.request({
+    //   url: 'https://wxhomo.xyz/selfStudy',
+    //   success: this.showAllDatas.bind(this)
+    // })
+    if (!wx.getStorageSync('selfStudys') || wx.getStorageSync('selfStudys').length === 0) {
+      wx.setStorageSync('selfStudys', [{
+        place: '立人楼',
+        time: '2019-01-01 8:00:00',
+        createBy: 'joie'
+      }, {
+        place: '品学楼',
+        time: '2019-01-01 6:00:00',
+        createBy: 'amy'
+      }])
+    }
+    this.setData({
+      array: wx.getStorageSync('selfStudys')
     })
   },
 

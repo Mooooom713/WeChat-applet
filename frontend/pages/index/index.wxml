@@ -1,23 +1,26 @@
-<swiper class="slides">
-  <swiper-item>
-    <image src="../picture/testMessage1.jpg" mode='aspectFill' />
-  </swiper-item>
-</swiper>
-<view class="homeFun">
-  <view class="NMSL" bindtap='navigate' data-module="1">
-    <image src="/pages/picture/testFunction1.jpg" />
-    <text>约自习</text>
-  </view>
-  <view class="NMSL" bindtap='navigate' data-module="2">
-    <image src="/pages/picture/testFunction2.jpg" />
-    <text>约早起</text>
-  </view>
-  <view class="NMSL" bindtap='navigate' data-module="3">
-    <image src="/pages/picture/testFunction3.jpg" />
-    <text>爱摄影</text>
-  </view>
-  <view class="NMSL" bindtap='navigate' data-module="4">
-    <image src="/pages/picture/testFunction4.jpg" />
-    <text>故事接龙</text>
+<view hidden="{{isShow}}">
+  <swiper class="slides">
+    <swiper-item>
+      <image src="../picture/testMessage1.jpg" mode='aspectFill' />
+    </swiper-item>
+  </swiper>
+  <view class="homeFun">
+    <view class="NMSL" bindtap='navigate' data-module="1">
+      <image src="/pages/picture/testFunction1.jpg" />
+      <text>约自习</text>
+    </view>
+    <view class="NMSL" bindtap='navigate' data-module="2">
+      <image src="/pages/picture/testFunction2.jpg" />
+      <text>约早起</text>
+    </view>
+    <view class="NMSL" bindtap='navigate' data-module="3">
+      <image src="/pages/picture/testFunction3.jpg" />
+      <text>爱摄影</text>
+    </view>
+    <view class="NMSL" bindtap='navigate' data-module="4">
+      <image src="/pages/picture/testFunction4.jpg" />
+      <text>故事接龙</text>
+    </view>
   </view>
 </view>
+<view hidden="{{!isShow}}">管理员界面</view>

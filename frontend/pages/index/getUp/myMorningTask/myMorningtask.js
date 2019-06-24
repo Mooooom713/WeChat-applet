@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -44,9 +44,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.request({
-      url: 'https://wxhomo.xyz/getUp',
-      success: this.showAllDatas.bind(this)
+    // wx.request({
+    //   url: 'https://wxhomo.xyz/getUp',
+    //   success: this.showAllDatas.bind(this)
+    // })
+    this.setData({
+      array: wx.getStorageSync('getUps').filter((item) => {
+        return item.createBy === wx.getStorageSync('loginInfo').name;
+      })
     })
   },
 

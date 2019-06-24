@@ -142,13 +142,13 @@ Page({
                         icon: "none"
                     })
                 }
-            } else {
-                wx.showToast({
-                    title: '该账号不存在',
-                    icon: "none"
-                })
+                return;
             }
         }
+        wx.showToast({
+            title: '该账号不存在',
+            icon: "none"
+        })
     },
 
     _confirmRegisterEvent() {
