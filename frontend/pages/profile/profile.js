@@ -6,7 +6,8 @@ Page({
      */
     data: {
         userInfo: null,
-        isLogin: false
+        isLogin: false,
+        type: ''
     },
 
     /**
@@ -86,6 +87,9 @@ Page({
 
     _confirmLoginEvent() {
         const { uID, sPW } = this.loginDialog.getLoginData()
+        this.setData({
+            type: 'login'
+        })
         wx.request({
             url: 'https://wxhomo.xyz/login',
             method: 'POST',
@@ -98,8 +102,32 @@ Page({
         })
     },
 
+    _confirmRegisterEvent() {
+        const { uID, sPW, sName, sSex, sAge, sGrade, sCollege, sMajor } = this.registerDialog.getRegisterData()
+        this.setData({
+            type: 'register'
+        })
+        wx.request({
+            url: 'https://wxhomo.xyz/newUser',
+            method: 'POST',
+            data: {
+                user_id: uID,
+                user_password: sPW,
+                gender: sSex,
+                age: sAge,
+                grade: sGrade,
+                department: sCollege,
+                major: sMajor,
+                name: sName
+            },
+            success: this.handleSuccess.bind(this),
+            fail: this.handleError.bind(this)
+        })
+    },
+
     handleSuccess(data) {
         const userInfo = data.data;
+        const { type } = this.data
         try {
             wx.setStorageSync('loginInfo', userInfo);
             this.setData({
@@ -107,16 +135,31 @@ Page({
                 isLogin: true
             })
           } catch (e) { 
+            const title = type === 'login' ? '登录失败' : '注册失败';
             wx.showToast({
-                title: "登录失败",
+                title: title,
                 icon: "none"
             })
         }
-        console.log(userInfo)
-        this.loginDialog.hideDialog()
+        if(type === 'login'){
+            this.loginDialog.hideDialog()
+        }else{
+            this.registerDialog.hideDialog()
+        }
     },
 
     handleError(error) {
-        console.log(error)
+        const { type } = this.data
+        if(type === 'login'){
+            wx.showToast({
+                title: '登录失败，请确认用户名和密码是否正确',
+                icon: "none"
+            })
+        }else{
+            wx.showToast({
+                title: '注册失败，请重新注册',
+                icon: "none"
+            })
+        }
     }
 })

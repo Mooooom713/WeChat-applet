@@ -48,7 +48,7 @@ Component({
               isShow: !this.data.isShow
           })
       },
-      getLoginData() {
+      getRegisterData() {
           return this.data;
       },
       /*
