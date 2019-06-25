@@ -7,7 +7,8 @@ Page({
      */
     data: {
         images: [],
-        uploadedImages: []
+        uploadedImages: [],
+        desc: ''
     },
 
     /**
@@ -16,7 +17,6 @@ Page({
     onLoad: function(options) {
         that = this;
         var objectId = options.objectId;
-        console.log(objectId);
     },
 
     /**
@@ -106,5 +106,57 @@ Page({
         that.setData({
             images: images
         });
+    },
+
+    handleDesc (e) {
+        const value = e.detail.value
+        this.setData({
+            desc: value
+        })
+    },
+
+    submit () {
+        const { desc, images } = this.data
+        const oData = {
+            imgUrls: images,
+            content: desc,
+            thumbsNumber: 0,
+            isShow : true,
+            beReported : false,
+            hasLiked : false
+        }
+        try {
+            var value = wx.getStorageSync('photographInfos')
+            var loginInfo = wx.getStorageSync('loginInfo')
+            if(value && loginInfo){
+                oData.user = loginInfo.name
+                const newData = value.concat(oData)
+                wx.setStorage({
+                    key: "photographInfos",
+                    data: newData
+                })
+            } else if(loginInfo){
+                let arr = []
+                oData.user = loginInfo.name
+                arr.push(oData)
+                wx.setStorage({
+                    key: "photographInfos",
+                    data: arr
+                })
+            } else {
+                wx.showToast({
+                    title: '请检查登录状态是否异常',
+                    icon: "none"
+                })
+            }
+            wx.redirectTo({
+                url: '/pages/index/photograph/photograph'
+            })
+        } catch (e) {
+            wx.showToast({
+                title: '发布失败',
+                icon: "none"
+            })
+        }
     }
 })

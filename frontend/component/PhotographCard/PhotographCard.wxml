@@ -13,7 +13,7 @@
       <text class="text">{{user}} : {{content}}</text>
     </view>
     <view class="button-wrap" wx:if="{{isShow}}">
-      <button class="thumbs-up-btn {{activeClass}}" catchtap="_handleThumbsUp">点赞({{thumbsNumber}})</button>
+      <button id="ni" class="thumbs-up-btn {{activeClass}}" catchtap="_handleThumbsUp">点赞({{thumbsNumber}})</button>
       <button class="report-btn" catchtap="_handleReport">举报</button>
     </view>
     <view class="number-wrap" wx:if="{{!isShow}}">

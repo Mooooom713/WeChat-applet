@@ -32,7 +32,7 @@
     confirmText='确定' 
     bind:cancelEvent='_cancelEvent' 
     bind:confirmEvent='_confirmEvent'>
-    <view class="modal-body">
-      <view>确定要退出吗？</view>
-    </view>
-  </dialog>
+  <view class="modal-body">
+    <view>确定要退出吗？</view>
+  </view>
+</dialog>

@@ -66,12 +66,10 @@
     margin-top: 10px;
 }
 
-.input-wrap,
 .desc-wrap {
     margin-left: 10px;
 }
 
-#title,
 #desc {
     margin-top: 10px;
     width: 90%;

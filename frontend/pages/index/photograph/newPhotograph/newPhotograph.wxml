@@ -1,11 +1,7 @@
 <view class="text-content-wrap">
-    <view class="input-wrap">
-        <label for="title">标题:</label>
-        <input id="title" type="text" maxlength="20" />
-    </view>
     <view class="desc-wrap">
         <label for="desc">描述:</label>
-        <textarea id="desc" show-confirm-bar="{{ false }}"></textarea>
+        <textarea id="desc" show-confirm-bar="{{ false }}" bindinput="handleDesc"></textarea>
     </view>
 </view>
 <view class="gallery">

@@ -5,14 +5,34 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        myPhotographInfos: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        try {
+            var value = wx.getStorageSync('photographInfos')
+            var loginInfo = wx.getStorageSync('loginInfo')
+            var user = loginInfo.name
+            if (value) {
+              let arr = []
+              value.forEach(element => {
+                  if(user === element.user){
+                    arr.push(element)
+                  }
+              });
+              this.setData({
+                myPhotographInfos : arr
+              })
+            }
+        } catch (e) {
+            wx.showToast({
+                title: '数据获取异常',
+                icon: "none"
+            })
+        }
     },
 
     /**

@@ -6,6 +6,29 @@
   <view class="btn" >我的</view>
 </navigator>
 </view>
-<photographcard></photographcard>
-<photographcard></photographcard>
-<photographcard></photographcard>
+<photographcard
+  wx:for="{{photographInfos}}"
+  wx:key="{{index}}"
+  wx:if="{{!item.beReported}}"
+  imgUrls="{{item.imgUrls}}"
+  user="{{item.user}}"
+  content="{{item.content}}"
+  thumbsNumber="{{item.thumbsNumber}}"
+  isShow="{{item.isShow}}"
+  hasLiked="{{item.hasLiked}}"
+  sId="{{index}}"
+  bind:handleThumbsUp="handleThumbsUp"
+  bind:handleReport="handleReport">
+</photographcard>
+
+<dialog 
+    class="modal" 
+    title='提示' 
+    cancelText='取消' 
+    confirmText='确定' 
+    bind:cancelEvent='cancelEvent' 
+    bind:confirmEvent='confirmEvent'>
+  <view class="modal-body">
+    <view>确定要举报该条内容吗？</view>
+  </view>
+</dialog>

@@ -1,1 +1,12 @@
-<photographcard isShow="{{false}}"></photographcard>
+<photographcard
+  wx:for="{{myPhotographInfos}}"
+  wx:key="{{index}}"
+  wx:if="{{!item.beReported}}"
+  imgUrls="{{item.imgUrls}}"
+  user="{{item.user}}"
+  content="{{item.content}}"
+  thumbsNumber="{{item.thumbsNumber}}"
+  isShow="{{false}}"
+  hasLiked="{{item.hasLiked}}"
+  sId="{{index}}">
+</photographcard>

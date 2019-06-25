@@ -10,7 +10,7 @@ Component({
         // 地点
         imgUrls: { // 属性名
             type: Array, // 类型（必填）
-            value: ['/pages/picture/test.jpg', '/pages/picture/testActive.jpg'] // 属性初始值（可选），如果未指定则会根据类型选择一个
+            value: ['/pages/picture/testFunction1.jpg', '/pages/picture/testFunction2.jpg'] // 属性初始值（可选），如果未指定则会根据类型选择一个
         },
         user: {
             type: String,
@@ -18,7 +18,7 @@ Component({
         },
         content: {
             type: String,
-            value: '好开心呀~ 又要老一岁了！！！好开心呀~ 又要老一岁了！！！好开心呀~ 又要老一岁了！！！好开心呀~ 又要老一岁了！！！'
+            value: '左边'
         },
         thumbsNumber: {
             type: Number,
@@ -27,6 +27,14 @@ Component({
         isShow: {
             type: Boolean,
             value: true
+        },
+        sId: {
+            type: Number,
+            value: 0
+        },
+        hasLiked: {
+            type: Boolean,
+            value: false
         }
     },
 
@@ -38,6 +46,16 @@ Component({
         activeClass: ''
     },
 
+    lifetimes: {
+        attached: function() {
+            if(this.data.hasLiked){
+                this.setData({
+                    activeClass: 'active'
+                })
+            }
+        }
+    },
+
     /**
      * 组件的方法列表
      * 更新属性和数据的方法与更新页面数据的方法类似
@@ -47,11 +65,11 @@ Component({
             this.setData({
                 activeClass: this.data.activeClass ? '' : 'active'
             }, () => {
-                this.triggerEvent("handleThumbsUp")
+                this.triggerEvent("handleThumbsUp", this.data.sId)
             })
         },
         _handleReport() {
-            this.triggerEvent("handleReport")
+            this.triggerEvent("handleReport", this.data.sId)
         }
     }
 })
