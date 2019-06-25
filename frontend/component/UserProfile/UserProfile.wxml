@@ -1,7 +1,6 @@
 <view class="container">
   <text>欢迎您: </text>
   <text class="text"> {{name}} </text>
-  <button class="right" bindtap='_exit'>退出登录</button>
 </view>
 <view class="mesg-wrap">
   <label for="uId">ID:</label>
@@ -27,3 +26,5 @@
   <label for="major">专业:</label>
   <input disabled id="major" value="{{major}}"/>
 </view>
+
+<button class="right" bindtap='_exit'>退出登录</button>

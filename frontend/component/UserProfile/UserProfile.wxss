@@ -33,6 +33,7 @@
 }
 
 button.right {
-    position: fixed;
-    right: 0px;
+    background: #ff9700;
+    color: #ffffff;
+    margin: 10px;
 }
