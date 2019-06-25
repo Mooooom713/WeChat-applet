@@ -3,5 +3,6 @@
         "photographcard": "/component/PhotographCard/PhotographCard",
         "dialog": "/component/Dialog/Dialog"
     },
-    "navigationBarTitleText": "爱摄影"
+    "navigationBarTitleText": "爱摄影",
+    "enablePullDownRefresh": true
 }

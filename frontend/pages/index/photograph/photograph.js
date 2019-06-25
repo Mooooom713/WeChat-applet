@@ -26,7 +26,6 @@ Page({
           user : 'Amy Li',
           content: 'Reality',
           thumbsNumber : 12,
-          isShow : true,
           beReported : false,
           hasLiked : false
         };

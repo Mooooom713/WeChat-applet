@@ -24,9 +24,17 @@ Component({
             type: Number,
             value: 0
         },
-        isShow: {
+        showThumbs: {
             type: Boolean,
             value: true
+        },
+        showNumber: {
+            type: Boolean,
+            value: false
+        },
+        showAdmin: {
+            type: Boolean,
+            value: false
         },
         sId: {
             type: Number,
@@ -70,6 +78,14 @@ Component({
         },
         _handleReport() {
             this.triggerEvent("handleReport", this.data.sId)
+        },
+
+        _handlePass() {
+            this.triggerEvent("handlePass", this.data.sId)
+        },
+
+        _handleNotPass () {
+            this.triggerEvent("handleNotPass", this.data.sId)
         }
     }
 })

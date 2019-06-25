@@ -23,4 +23,34 @@
     </view>
   </view>
 </view>
-<view hidden="{{!isShow}}">管理员界面</view>
+<view hidden="{{!isShow}}">
+  <view class="title-wrap">待处理发言：</view>
+  <view class="">
+    <photographcard
+      wx:for="{{photographErrorInfos}}"
+      wx:if="{{item.beReported}}"
+      wx:key="{{index}}"
+      imgUrls="{{item.imgUrls}}"
+      user="{{item.user}}"
+      content="{{item.content}}"
+      showThumbs="{{false}}"
+      showNumber="{{false}}"
+      showAdmin="{{true}}"
+      sId="{{index}}"
+      bind:handlePass="handlePass"
+      bind:handleNotPass="handleNotPass">
+    </photographcard>
+  </view>
+</view>
+<!-- 提示 -->
+<dialog 
+    class="modal" 
+    title='提示' 
+    cancelText='取消' 
+    confirmText='确定' 
+    bind:cancelEvent='_cancelEvent' 
+    bind:confirmEvent='_confirmEvent'>
+  <view class="modal-body">
+    <view>确定{{text}}吗？</view>
+  </view>
+</dialog>

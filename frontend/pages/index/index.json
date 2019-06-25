@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "photographcard": "/component/PhotographCard/PhotographCard",
+    "dialog": "/component/Dialog/Dialog"
+  }
 }

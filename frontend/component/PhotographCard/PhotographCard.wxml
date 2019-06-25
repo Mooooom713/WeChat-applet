@@ -12,12 +12,16 @@
     <view class="text-wrap">
       <text class="text">{{user}} : {{content}}</text>
     </view>
-    <view class="button-wrap" wx:if="{{isShow}}">
+    <view class="button-wrap" wx:if="{{showThumbs}}">
       <button id="ni" class="thumbs-up-btn {{activeClass}}" catchtap="_handleThumbsUp">点赞({{thumbsNumber}})</button>
       <button class="report-btn" catchtap="_handleReport">举报</button>
     </view>
-    <view class="number-wrap" wx:if="{{!isShow}}">
+    <view class="number-wrap" wx:if="{{showNumber}}">
       <text class="">点赞数: {{thumbsNumber}}</text>
+    </view>
+   <view class="button-wrap" wx:if="{{showAdmin}}">
+      <button class="pass-btn" catchtap="_handlePass">审批通过</button>
+      <button class="not-pass-btn" catchtap="_handleNotPass">审批不通过</button>
     </view>
   </view>
 </view>

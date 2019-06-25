@@ -121,7 +121,6 @@ Page({
             imgUrls: images,
             content: desc,
             thumbsNumber: 0,
-            isShow : true,
             beReported : false,
             hasLiked : false
         }
