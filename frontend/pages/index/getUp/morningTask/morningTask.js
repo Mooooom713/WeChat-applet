@@ -66,12 +66,27 @@ Page({
     // })
     var array = wx.getStorageSync('getUps');
     array.push({
-      place: data.duration,
+      guid: this.guid(),
+      place: data.duration + '天',
       time: data.startDate + ' ' + data.time,
-      createBy: data.initiator_name
+      createBy: data.initiator_name,
+      isPaticipanted: '参加',
+      activeClass: ''
     })
     wx.setStorageSync('getUps', array);
     this.Modal.hideModal();
     wx.navigateBack();
+  },
+
+  guid: function () {
+    var sGuid = '';
+    for (var i = 0; i < 32; i++) {
+      var n = Math.floor(Math.random() * 16.0).toString(16);
+      sGuid += n;
+      if (i === 7 || i === 11 || i === 15 || i === 19) {
+        sGuid += '-';
+      }
+    }
+    return sGuid;
   }
 })

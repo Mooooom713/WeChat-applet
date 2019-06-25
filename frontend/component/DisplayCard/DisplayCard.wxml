@@ -7,7 +7,7 @@
       <text class='Text'>{{placeholder}}：{{place}}</text>
       <text class='Text'>时间：{{time}}</text>
       <text class='Text'>发起人：{{createBy}}</text>
-      <button hidden='{{isHidden}}' class='joinBtn' catchtap='_handleClickJoin'>{{content}}</button>
+      <button hidden='{{isHidden}}' class='joinBtn {{activeClass}}' catchtap='_handleClickJoin'>{{content}}</button>
     </view>
   </view>
 </view>

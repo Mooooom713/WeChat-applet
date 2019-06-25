@@ -14,5 +14,7 @@
   place='{{item.place}}' 
   time='{{item.time}}' 
   createBy='{{item.createBy}}' 
-  content='参加'>
+  content='{{item.isPaticipanted}}'
+  data-guid='{{item.guid}}'
+  activeClass='{{item.activeClass}}'>
 </displaycard>

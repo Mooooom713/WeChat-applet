@@ -49,13 +49,19 @@ Page({
     // })
     if (!wx.getStorageSync('getUps') || wx.getStorageSync('getUps').length === 0) {
       wx.setStorageSync('getUps', [{
+        guid: this.guid(),
         place: '14天',
         time: '2019-01-01 8:00:00',
-        createBy: 'joie'
+        createBy: 'joie',
+        isPaticipanted: '参加',
+        activeClass: ''
       }, {
+        guid: this.guid(),
         place: '20天',
         time: '2019-01-01 6:00:00',
-        createBy: 'amy'
+        createBy: 'amy',
+        isPaticipanted: '参加',
+        activeClass: ''
       }])
     }
     this.setData({
@@ -96,5 +102,41 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  _submitJoinEvent: function (e) {
+    let array = this.data.array;
+    let index = null;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].guid === e.currentTarget.dataset.guid) {
+        index = i;
+        break;
+      }
+    }
+    if (index !== null) {
+      if(array[index].isPaticipanted === '参加') {
+        array[index].isPaticipanted = '取消参加';
+        array[index].activeClass = 'active';
+      } else {
+        array[index].isPaticipanted = '参加';
+        array[index].activeClass = '';
+      }
+    }
+    wx.setStorageSync('getUps', array)
+    this.setData({
+      array: array
+    })
+  },
+
+  guid: function () {
+    var sGuid = '';
+    for (var i = 0; i < 32; i++) {
+      var n = Math.floor(Math.random() * 16.0).toString(16);
+      sGuid += n;
+      if (i === 7 || i === 11 || i === 15 || i === 19) {
+        sGuid += '-';
+      }
+    }
+    return sGuid;
   }
 })

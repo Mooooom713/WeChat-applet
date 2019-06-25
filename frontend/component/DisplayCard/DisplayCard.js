@@ -36,6 +36,16 @@ Component({
     content: {
       type: String,
       value: ''
+    },
+    // 是否参加
+    isPaticipanted: {
+      type: String,
+      value: '参加'
+    },
+    // Class
+    activeClass: {
+      type: String,
+      value: ''
     }
   },
 
@@ -52,10 +62,7 @@ Component({
    */
   methods: {
     _handleClickJoin() {
-      // this.triggerEvent("submitJoinEvent")
-      this.setData({
-        content: '已参加'
-      })
+      this.triggerEvent("submitJoinEvent")
     }
   }
 })
