@@ -19,3 +19,10 @@
     height: 100rpx;
     width: 90%
 }
+
+.inputBox {
+    background-color: white;
+    margin-bottom: 20rpx;
+    height: 2rem;
+    font-size: 1.5rem;
+}

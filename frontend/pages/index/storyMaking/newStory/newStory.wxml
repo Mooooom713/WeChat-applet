@@ -1,10 +1,23 @@
 <view>
-      <textarea placeholder-class="place-holder" placeholder="写下你的故事 " maxlength='200' bindinput='limit' value="{{text}}" style="font-size: 28px;" class='body' />
-      <!-- 显示字数 -->
-      <view class="clear">
-            <text style="color: #ccc; font-size: 14px; float: right; margin-right: 2%;">
-                  {{current}} / {{max}} （最多可写200字）
-            </text>
-      </view>
+  <form bindsubmit='submit'>
+    <input name='title' placeholder="标题：" class="inputBox"></input>
+    <textarea name='content' placeholder-class="place-holder" placeholder="写下你的故事 " maxlength='200' class='body' />
+    <view class="clear">
+      <text style="color: #ccc; font-size: 14px; float: right; margin-right: 2%;">
+        （最多可写200字）
+      </text>
+    </view>
+    <button class='btn' form-type='submit'>确认发布</button>
+  </form>
 </view>
-<view class='btn' bindtap='btn'>确认发布</view>
+<dialog 
+    class="modal" 
+    title='提示' 
+    cancelText='取消' 
+    confirmText='确定' 
+    bind:cancelEvent='_cancelEvent' 
+    bind:confirmEvent='_confirmEvent'>
+    <view class="modal-body">
+      <view>确定要发布吗？</view>
+    </view>
+</dialog>

@@ -1,5 +1,7 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "dialog": "/component/Dialog/Dialog"
+    },
     "navigationBarTitleText": "发帖",
     "enablePullDownRefresh": false
 }

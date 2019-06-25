@@ -1,1 +1,7 @@
-<storycard bind:navToDetail='_navToDetail'></storycard>
+<storycard 
+  wx:for='{{array}}' 
+  wx:key='index' 
+  bind:navToDetail='_navToDetail'
+  storyName='{{item.storyName}}' 
+  storyNumbers='{{item.storyNumbers}}'
+  ceng='{{item.guid}}'></storycard>

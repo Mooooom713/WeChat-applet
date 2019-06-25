@@ -5,7 +5,7 @@
         </view>
         <view class='aTask'>
             <text class='Text'>故事名称：{{ storyName }}</text>
-            <text class='Text'>总计字数：{{ storyNumbers }}</text>
+            <text class='Text'>发布者：{{ storyNumbers }}</text>
         </view>
     </view>
 </navigator>

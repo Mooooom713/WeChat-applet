@@ -1,0 +1,17 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #dddddd;
+    margin-left: 5%;
+}
+
+.comentText {
+    margin-top: 10px;
+}
+
+.user {
+    align-self: flex-end;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    font-size: .8rem;
+}

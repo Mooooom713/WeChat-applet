@@ -1,26 +1,17 @@
 <view class="container">
   <view class="mainWrap">
-    <view class="mainStory">
-      这是一个很长很长的故事这是一个很长很长的故事这是一个很长很长的故事这是一个很长很长的故事
-    </view>
+    <view class="mainStory">{{commentInfo.content}}</view>
   </view>
   <view class="commentWrap">
     <text class="h2">评论</text>
-    <view class="comment">
-      <text class="comentText">fewkjfnjkhfwelhfihljfilefheiwlfe而无法妇女呢看完你诺福克为你考虑o</text>
-      <text class="user">李爱米</text>
-    </view>
-    <view class="comment">
-      <text class="comentText">fewkjfnjkhfwelhfihljfilefheiwlfe而无法妇女呢看完你诺福克为你考虑o</text>
-      <text class="user">李爱米</text>
-    </view>
-    <view class="comment">
-      <text class="comentText">fewkjfnjkhfwelhfihljfilefheiwlfe而无法妇女呢看完你诺福克为你考虑o</text>
-      <text class="user">李爱米</text>
-    </view>
+    <comment 
+      wx:for='{{commentInfo.comments}}' 
+      wx:key='index' 
+      comment_content='{{item.comment_content}}' 
+      commentor='{{item.commentor}}'></comment>
   </view>
   <view class="footerbarWrap">
-    <textarea class="textarea" show-confirm-bar="{{ false }}" fixed="{{ true }}" maxlength="170"></textarea>
-    <button class="btn">提交</button>
+    <textarea value='{{value}}' bindblur='getValue' class="textarea" show-confirm-bar="{{ false }}" fixed="{{ true }}" maxlength="170"></textarea>
+    <button class="btn" bindtap='submit'>提交</button>
   </view>
 </view>

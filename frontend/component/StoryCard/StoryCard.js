@@ -9,18 +9,18 @@ Component({
     properties: {
       // 地点
       ceng: {            // 属性名
-        type: Number,     // 类型（必填）
-        value: 1     // 属性初始值（可选），如果未指定则会根据类型选择一个
+        type: String,     // 类型（必填）
+        value: ''     // 属性初始值（可选），如果未指定则会根据类型选择一个
       },
       // 时间
       storyName :{
         type : String ,
-        value : '农夫与蛇'
+        value : ''
       },
       // 发起人
       storyNumbers :{
         type : String ,
-        value : '2005'
+        value : ''
       }
     },
   

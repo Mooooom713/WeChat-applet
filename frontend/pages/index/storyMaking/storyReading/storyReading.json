@@ -1,5 +1,7 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "comment" : "/component/Comment/Comment"
+    },
     "navigationBarTitleText": "跟帖",
     "enablePullDownRefresh": true
 }

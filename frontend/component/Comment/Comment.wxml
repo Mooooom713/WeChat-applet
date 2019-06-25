@@ -1,0 +1,4 @@
+<view class="comment">
+    <text class="comentText">{{comment_content}}</text>
+    <text class="user">{{commentor}}</text>
+</view>

@@ -1,33 +1,57 @@
 Page({
     data: {
-        text: '',
-        current: 0,
-        max: 200,
+        
     },
-    limit: function(e) {
-        var value = e.detail.value;
-        var length = parseInt(value.length);
-        if (length > this.data.noteMaxLen) {
-            return;
-        }
-        this.setData({
-            current: length,
-            text: e.detail.value
-        });
-        console.log(this.data.text);
-    },
-    btn: function() {
-        //  todo 上传text中的数据
-        wx.showToast({
-            title: '已上传',
-            icon: 'sucess',
-            duration: 1000
-        });
-        setTimeout(function() {
-            wx.navigateBack({
-                url: '/pages/index/storyMaking/storyMaking',
-            });
-        }, 1000)
-    }
 
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onReady: function () {
+      this.Modal = this.selectComponent(".modal");
+    },
+
+    submit: function (e) {
+        let array = wx.getStorageSync('storys');
+        array.push({
+            guid: this.guid(),
+            storyName: e.detail.value.title,
+            storyNumbers: wx.getStorageSync('loginInfo').name,
+            content: e.detail.value.content,
+            comments: []
+        })
+        this.Modal.showModal();
+        this.ook = this.ok.bind(this, array);
+    },
+
+    ok: function (array) {
+        wx.setStorageSync('storys', array);
+        this.Modal.hideModal();
+        wx.navigateBack();
+    },
+
+    /**
+    * 取消提交
+    */
+    _cancelEvent: function () {
+      this.Modal.hideModal();
+    },
+
+    /**
+     * 确认提交
+     */
+    _confirmEvent: function () {
+      setTimeout(this.ook, 1000);
+    },
+
+    guid: function () {
+        var sGuid = '';
+        for (var i = 0; i < 32; i++) {
+            var n = Math.floor(Math.random() * 16.0).toString(16);
+            sGuid += n;
+            if (i === 7 || i === 11 || i === 15 || i === 19) {
+                sGuid += '-';
+            }
+        }
+        return sGuid;
+    }
 })
