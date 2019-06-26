@@ -104,7 +104,6 @@ Page({
     try {
       var value = wx.getStorageSync('loginInfo')
       if (value) {
-        console.log(value)
         user = value.name
         if(oData[index].hasLiked.includes(user)){
           oData[index].thumbsNumber--

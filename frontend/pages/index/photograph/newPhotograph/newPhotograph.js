@@ -116,6 +116,15 @@ Page({
     },
 
     submit () {
+        if(this.timer){
+            clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(() => {
+            this.handleSubmit()
+        }, 500)
+    },
+
+    handleSubmit () {
         const { desc, images } = this.data
         if(desc && images.length > 0){
             const oData = {
