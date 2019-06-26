@@ -178,23 +178,30 @@ Page({
         //     success: this.handleSuccess.bind(this),
         //     fail: this.handleError.bind(this)
         // })
-        const userInfo = {
-            user_id: uID,
-            user_password: sPW,
-            gender: sSex,
-            age: sAge,
-            grade: sGrade,
-            department: sCollege,
-            major: sMajor,
-            name: sName,
-            role: "student"
+        if(uID && sPW && sName && sSex && sAge && sGrade && sCollege && sMajor){
+            const userInfo = {
+                user_id: uID,
+                user_password: sPW,
+                gender: sSex,
+                age: sAge,
+                grade: sGrade,
+                department: sCollege,
+                major: sMajor,
+                name: sName,
+                role: "student"
+            }
+            if(this.registerTimer){
+                clearTimeout(this.registerTimer)
+            }
+            this.registerTimer = setTimeout(() => {
+                this.fakeRegisterRequest(userInfo)
+            }, 1000);
+        }else{
+            wx.showToast({
+                title: '所有信息均为必填',
+                icon: "none"
+            })
         }
-        if(this.registerTimer){
-            clearTimeout(this.registerTimer)
-        }
-        this.registerTimer = setTimeout(() => {
-            this.fakeRegisterRequest(userInfo)
-        }, 1000);
     },
 
     fakeRegisterRequest(userInfo) {
