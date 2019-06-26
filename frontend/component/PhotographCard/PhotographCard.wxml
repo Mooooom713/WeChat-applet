@@ -1,6 +1,6 @@
 <view class="container">
   <view class="swiper-wrap">
-    <swiper indicator-dots="{{true}}" duration="{{500}}">
+    <swiper indicator-dots="{{true}}" duration="{{500}}" class='swiperClass'>
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
           <image class="swiper-image" src="{{item}}" />

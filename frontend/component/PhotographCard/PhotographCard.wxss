@@ -72,3 +72,7 @@
 .not-pass-btn {
     color: #ff9700;
 }
+
+.swiperClass {
+    height: 20rem;
+}

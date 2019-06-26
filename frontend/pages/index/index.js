@@ -91,7 +91,7 @@ Page({
   navigate: function (e) {
     if (!wx.getStorageSync('loginInfo')) {
       wx.showToast({
-        title: '请先登录才能访问这些功能哦！',
+        title: '请先进入我的进行登录才能访问这些功能哦！',
         icon: "none"
       })
       return;
