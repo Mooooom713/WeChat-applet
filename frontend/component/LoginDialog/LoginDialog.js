@@ -21,6 +21,7 @@ Component({
         sPW: ''
     },
 
+
     /**
      * 组件的方法列表
      * 更新属性和数据的方法与更新页面数据的方法类似
@@ -44,6 +45,13 @@ Component({
         },
         getLoginData() {
             return this.data;
+        },
+
+        handleClearData() {
+            this.setData({
+                uID: '',
+                sPW: ''
+           })
         },
         /*
          * 内部私有方法建议以下划线开头

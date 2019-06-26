@@ -118,7 +118,12 @@ Page({
             user_id: uID,
             user_password: sPW
         }
-        setTimeout(this.fakeLoginRequest.bind(this, userInfo), 1000);
+        if(this.loginTimer){
+            clearTimeout(this.loginTimer)
+        }
+        this.loginTimer = setTimeout(() => {
+            this.fakeLoginRequest(userInfo)
+        }, 1000);
     },
 
     fakeLoginRequest(userInfo) {
@@ -132,6 +137,7 @@ Page({
                         title: '登录成功!',
                         icon: "success"
                     })
+                    this.loginDialog.handleClearData()
                     this.setData({
                         userInfo: registerInfos[i],
                         isLogin: true
@@ -183,7 +189,12 @@ Page({
             name: sName,
             role: "student"
         }
-        setTimeout(this.fakeRegisterRequest.bind(this, userInfo), 1000);
+        if(this.registerTimer){
+            clearTimeout(this.registerTimer)
+        }
+        this.registerTimer = setTimeout(() => {
+            this.fakeRegisterRequest(userInfo)
+        }, 1000);
     },
 
     fakeRegisterRequest(userInfo) {
@@ -209,6 +220,7 @@ Page({
                 icon: "success"
             })
             this.registerDialog.hideDialog();
+            this.registerDialog.handleClearData()
             this.setData({
                 userInfo: userInfo,
                 isLogin: true

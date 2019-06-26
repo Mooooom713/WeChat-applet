@@ -51,6 +51,19 @@ Component({
       getRegisterData() {
           return this.data;
       },
+
+      handleClearData () {
+        this.setData({
+            uID: '',
+            sPW: '',
+            sName: '',
+            sSex: '',
+            sAge: '',
+            sGrade: '',
+            sCollege: '',
+            sMajor: ''
+        })
+      },
       /*
        * 内部私有方法建议以下划线开头
        * triggerEvent 用于触发事件
