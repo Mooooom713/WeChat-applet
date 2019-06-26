@@ -3,7 +3,7 @@
     <view class="mainStory">{{commentInfo.content}}</view>
   </view>
   <view class="commentWrap">
-    <text class="h2">评论</text>
+    <text class="h2">接龙：</text>
     <comment 
       wx:for='{{commentInfo.comments}}' 
       wx:key='index' 

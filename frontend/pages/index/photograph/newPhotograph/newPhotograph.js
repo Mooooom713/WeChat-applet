@@ -117,41 +117,48 @@ Page({
 
     submit () {
         const { desc, images } = this.data
-        const oData = {
-            imgUrls: images,
-            content: desc,
-            thumbsNumber: 0,
-            beReported : false,
-            hasLiked : false
-        }
-        try {
-            var value = wx.getStorageSync('photographInfos')
-            var loginInfo = wx.getStorageSync('loginInfo')
-            if(value && loginInfo){
-                oData.user = loginInfo.name
-                const newData = value.concat(oData)
-                wx.setStorage({
-                    key: "photographInfos",
-                    data: newData
-                })
-            } else if(loginInfo){
-                let arr = []
-                oData.user = loginInfo.name
-                arr.push(oData)
-                wx.setStorage({
-                    key: "photographInfos",
-                    data: arr
-                })
-            } else {
+        if(desc && images.length > 0){
+            const oData = {
+                imgUrls: images,
+                content: desc,
+                thumbsNumber: 0,
+                beReported : false,
+                hasLiked : false
+            }
+            try {
+                var value = wx.getStorageSync('photographInfos')
+                var loginInfo = wx.getStorageSync('loginInfo')
+                if(value && loginInfo){
+                    oData.user = loginInfo.name
+                    const newData = value.concat(oData)
+                    wx.setStorage({
+                        key: "photographInfos",
+                        data: newData
+                    })
+                } else if(loginInfo){
+                    let arr = []
+                    oData.user = loginInfo.name
+                    arr.push(oData)
+                    wx.setStorage({
+                        key: "photographInfos",
+                        data: arr
+                    })
+                } else {
+                    wx.showToast({
+                        title: '请检查登录状态是否异常',
+                        icon: "none"
+                    })
+                }
+                wx.navigateBack();
+            } catch (e) {
                 wx.showToast({
-                    title: '请检查登录状态是否异常',
+                    title: '发布失败',
                     icon: "none"
                 })
             }
-            wx.navigateBack();
-        } catch (e) {
+        }else{
             wx.showToast({
-                title: '发布失败',
+                title: '图片和文字内容不能为空',
                 icon: "none"
             })
         }
