@@ -41,8 +41,8 @@ Component({
             value: 0
         },
         hasLiked: {
-            type: Boolean,
-            value: false
+            type: String,
+            value: ''
         }
     },
 
@@ -56,11 +56,19 @@ Component({
 
     lifetimes: {
         attached: function() {
-            if(this.data.hasLiked){
-                this.setData({
-                    activeClass: 'active'
-                })
-            }
+            try {
+                var value = wx.getStorageSync('loginInfo')
+                if (value) {
+                    if(this.data.hasLiked.includes(value.name)){
+                        this.setData({
+                            activeClass: 'active'
+                        })
+                    }
+                }
+              } catch (e) {
+                console.log(e)
+              }
+
         }
     },
 

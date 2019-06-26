@@ -123,7 +123,7 @@ Page({
                 content: desc,
                 thumbsNumber: 0,
                 beReported : false,
-                hasLiked : false
+                hasLiked : []
             }
             try {
                 var value = wx.getStorageSync('photographInfos')

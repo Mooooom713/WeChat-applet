@@ -42,7 +42,7 @@ Page({
           content: 'Reality',
           thumbsNumber : 12,
           beReported : false,
-          hasLiked : false
+          hasLiked : [],
         };
         arr.push(data);
         wx.setStorage({
@@ -100,21 +100,32 @@ Page({
   handleThumbsUp (e) {
     const index = e.detail;
     const oData = this.data.photographInfos;
-    if(oData[index].hasLiked){
-      oData[index].thumbsNumber--
-      oData[index].hasLiked = false
-    }else{
-      oData[index].thumbsNumber++
-      oData[index].hasLiked = true
+    let user
+    try {
+      var value = wx.getStorageSync('loginInfo')
+      if (value) {
+        console.log(value)
+        user = value.name
+        if(oData[index].hasLiked.includes(user)){
+          oData[index].thumbsNumber--
+          const sort = oData[index].hasLiked.indexOf(user)
+          oData[index].hasLiked.splice(sort, 1)
+        }else{
+          oData[index].thumbsNumber++
+          oData[index].hasLiked.push(user)
+        }
+        wx.setStorage({
+          key:"photographInfos",
+          data: oData
+        })
+    
+        this.setData({
+          photographInfos: oData
+        })
+      }
+    } catch (e) {
+      console.log(e)
     }
-    wx.setStorage({
-      key:"photographInfos",
-      data: oData
-    })
-
-    this.setData({
-      photographInfos: oData
-    })
   },
 
   handleReport(e) {
