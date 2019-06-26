@@ -1,16 +1,27 @@
 Page({
     data: {
-        
+
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onReady: function () {
-      this.Modal = this.selectComponent(".modal");
+        this.Modal = this.selectComponent(".modal");
+    },
+
+    onShow: function () {
+        this.timeout = null;
     },
 
     submit: function (e) {
+        if (!e.detail.value.title || !e.detail.value.content) {
+            wx.showToast({
+                title: '请填写完整！',
+                icon: "none"
+            })
+            return;
+        }
         let array = wx.getStorageSync('storys');
         array.push({
             guid: this.guid(),
@@ -33,14 +44,15 @@ Page({
     * 取消提交
     */
     _cancelEvent: function () {
-      this.Modal.hideModal();
+        this.Modal.hideModal();
     },
 
     /**
      * 确认提交
      */
     _confirmEvent: function () {
-      setTimeout(this.ook, 1000);
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(this.ook, 1000);
     },
 
     guid: function () {

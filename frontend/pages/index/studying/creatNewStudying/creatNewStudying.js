@@ -11,6 +11,10 @@ Page({
     this.Modal = this.selectComponent(".modal");
   },
 
+  onShow: function () {
+    this.timeout = null;
+  },
+
   /**
    * 取消提交
    */
@@ -22,13 +26,21 @@ Page({
    * 确认提交
    */
   _confirmEvent: function () {
-    setTimeout(this.readyToPublish, 1000);
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(this.readyToPublish, 1000);
   },
 
   /**
    * 打开确认dialog
    */
   openDialog: function (e) {
+    if (!e.detail.value.address || !e.detail.value.date || !e.detail.value.begin_time) {
+      wx.showToast({
+        title: '地点 日期 开始时间是必填项哦！',
+        icon: "none"
+      })
+      return;
+    }
     this.Modal.showModal();
     let data = {
       address: e.detail.value.address,
@@ -71,11 +83,16 @@ Page({
       time: data.date + ' ' + data.begin_time,
       createBy: data.initiator_name,
       isPaticipanted: '参加',
-      activeClass: ''
+      activeClass: '',
+      paticipanters: []
     })
     wx.setStorageSync('selfStudys', array);
     this.Modal.hideModal();
     wx.navigateBack();
+    wx.showToast({
+      title: '创建成功！',
+      icon: "success"
+    })
   },
 
   guid: function () {

@@ -54,19 +54,35 @@ Page({
         time: '2019-01-01 8:00:00',
         createBy: 'joie',
         isPaticipanted: '参加',
-        activeClass: ''
+        activeClass: '',
+        paticipanters: []
       }, {
         guid: this.guid(),
         place: '20天',
         time: '2019-01-01 6:00:00',
         createBy: 'amy',
         isPaticipanted: '参加',
-        activeClass: ''
+        activeClass: '',
+        paticipanters: []
       }])
     }
     this.setData({
-      array: wx.getStorageSync('getUps')
+      array: this.check(wx.getStorageSync('getUps'))
     })
+  },
+
+  check: function (array) {
+    for (let i = 0; i < array.length; i++) {
+      array[i].isPaticipanted = '参加';
+      array[i].activeClass = '';
+      for (let j = 0; j < array[i].paticipanters.length; j++) {
+        if (array[i].paticipanters[i] === wx.getStorageSync('loginInfo').name) {
+          array[i].isPaticipanted = '取消参加';
+          array[i].activeClass = 'active';
+        }
+      }
+    }
+    return array;
   },
 
   /**
@@ -114,12 +130,16 @@ Page({
       }
     }
     if (index !== null) {
-      if(array[index].isPaticipanted === '参加') {
+      if (array[index].isPaticipanted === '参加') {
         array[index].isPaticipanted = '取消参加';
         array[index].activeClass = 'active';
+        array[index].paticipanters.push(wx.getStorageSync('loginInfo').name);
       } else {
         array[index].isPaticipanted = '参加';
         array[index].activeClass = '';
+        array[index].paticipanters = array[index].paticipanters.filter(function (item) {
+          return item !== wx.getStorageSync('loginInfo').name;
+        })
       }
     }
     wx.setStorageSync('getUps', array)
