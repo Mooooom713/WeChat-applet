@@ -148,9 +148,7 @@ Page({
                     icon: "none"
                 })
             }
-            wx.redirectTo({
-                url: '/pages/index/photograph/photograph'
-            })
+            wx.navigateBack();
         } catch (e) {
             wx.showToast({
                 title: '发布失败',
