@@ -14,30 +14,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        try {
-            var value = wx.getStorageSync('loginInfo')
-            if (value) {
-                this.setData({
-                    userInfo: value,
-                    isLogin: true
-                })
-            }
-        } catch (e) {
-            console.log(e)
-        }
-        if (!wx.getStorageSync('registerInfos')) {
-            wx.setStorageSync('registerInfos', [{
-                user_id: "0000000000000",
-                user_password: "password",
-                gender: "男",
-                age: "42",
-                grade: "无",
-                department: "信软",
-                major: "无",
-                name: "管理员",
-                role: "admin"
-            }])
-        }
     },
 
     /**
@@ -53,7 +29,30 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        // console.log(this.data.userInfo)
+        try {
+            var value = wx.getStorageSync('loginInfo')
+            if (value) {
+                this.setData({
+                    userInfo: value,
+                    isLogin: true
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+        if (!wx.getStorageSync('registerInfos') || wx.getStorageSync('registerInfos').length === 0) {
+            wx.setStorageSync('registerInfos', [{
+                user_id: "0000000000000",
+                user_password: "password",
+                gender: "男",
+                age: "42",
+                grade: "无",
+                department: "信软",
+                major: "无",
+                name: "管理员",
+                role: "admin"
+            }])
+        }
     },
 
     /**
