@@ -59,11 +59,13 @@ Component({
             try {
                 var value = wx.getStorageSync('loginInfo')
                 if (value) {
-                    if(this.data.hasLiked.includes(value.name)){
-                        this.setData({
-                            activeClass: 'active'
-                        })
-                    }
+                    this.data.hasLiked.forEach(element => {
+                        if(element === value.name){
+                            this.setData({
+                                activeClass: 'active'
+                            })
+                        }
+                    });
                 }
               } catch (e) {
                 console.log(e)
