@@ -98,28 +98,21 @@ Page({
   },
 
   handleThumbsUp (e) {
-    const index = e.detail;
+    const i = e.detail;
     const oData = this.data.photographInfos;
     let user
     try {
       var value = wx.getStorageSync('loginInfo')
       if (value) {
         user = value.name
-        if( oData[index].hasLiked.length > 0){
-          oData[index].hasLiked.forEach((element, index) => {
-            if(element === user){
-              oData[index].thumbsNumber--
-              oData[index].hasLiked.splice(index, 1)
-            }else{
-              oData[index].thumbsNumber++
-              oData[index].hasLiked.push(user)
-            }
-          });
+        const index = oData[i].hasLiked.indexOf(user)
+        if(index > -1){
+          oData[i].thumbsNumber--
+          oData[i].hasLiked.splice(index, 1)
         }else{
-          oData[index].thumbsNumber++
-          oData[index].hasLiked.push(user)
-        }
-        
+          oData[i].thumbsNumber++
+          oData[i].hasLiked.push(user)
+        }     
         wx.setStorage({
           key:"photographInfos",
           data: oData
