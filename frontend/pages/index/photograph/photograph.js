@@ -105,15 +105,21 @@ Page({
       var value = wx.getStorageSync('loginInfo')
       if (value) {
         user = value.name
-        oData[index].hasLiked.forEach((element, index) => {
-          if(element === user){
-            oData[index].thumbsNumber--
-            oData[index].hasLiked.splice(index, 1)
-          }else{
-            oData[index].thumbsNumber++
-            oData[index].hasLiked.push(user)
-          }
-        });
+        if( oData[index].hasLiked.length > 0){
+          oData[index].hasLiked.forEach((element, index) => {
+            if(element === user){
+              oData[index].thumbsNumber--
+              oData[index].hasLiked.splice(index, 1)
+            }else{
+              oData[index].thumbsNumber++
+              oData[index].hasLiked.push(user)
+            }
+          });
+        }else{
+          oData[index].thumbsNumber++
+          oData[index].hasLiked.push(user)
+        }
+        
         wx.setStorage({
           key:"photographInfos",
           data: oData
