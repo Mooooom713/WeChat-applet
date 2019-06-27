@@ -41,7 +41,7 @@ Component({
             value: 0
         },
         hasLiked: {
-            type: String,
+            type: Array,
             value: ''
         }
     },
